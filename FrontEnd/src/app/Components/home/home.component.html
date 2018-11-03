@@ -1,0 +1,24 @@
+<form [formGroup]="loginform">
+  <div>
+    <div>
+      USERNAME : <input type="text" formControlName="username" required>
+    </div>
+    <div *ngIf="this.loginform.errors">
+      <p>Please Enter username</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      PASSWORD : <input type="text" formControlName="password" requireds>
+    </div>
+    <!-- <div *ngIf="this.loginform.password.hasError('required') && this.loginform.password.touched">
+      <p>Please Enter password</p>
+    </div>
+    <div *ngIf="this.loginform.password.hasError('pattern')">
+      <p>Please Enter valid password</p>
+    </div> -->
+  </div>
+  <div>
+    <button type="submit" [disabled]="!this.loginform.valid" (click)="login()">Login</button>
+  </div>
+</form>
