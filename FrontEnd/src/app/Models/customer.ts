@@ -5,8 +5,8 @@ export class Customer {
     emailid: String;
     phonenumber: number;
 
-    address1: String;
-    address2: String;
+    addressline1: String;
+    addressline2: String;
     landmark: String;
     pincode: number;
     city: String;
@@ -16,4 +16,5 @@ export class Customer {
     retailername?: String;
     customerID: String;
     password: String;
+    confirmpassword: String;
 }

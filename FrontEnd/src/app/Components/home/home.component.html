@@ -3,22 +3,24 @@
     <div>
       USERNAME : <input type="text" formControlName="username" required>
     </div>
-    <div *ngIf="this.loginform.errors">
+    <div *ngIf="(this.loginform.get('username').dirty || this.loginform.get('username').touched ) && this.loginform.get('username').hasError('required')">
       <p>Please Enter username</p>
     </div>
   </div>
   <div>
     <div>
-      PASSWORD : <input type="text" formControlName="password" requireds>
+      PASSWORD : <input type="text" formControlName="password" required>
     </div>
-    <!-- <div *ngIf="this.loginform.password.hasError('required') && this.loginform.password.touched">
+    <div *ngIf="(this.loginform.get('password').dirty || this.loginform.get('password').touched ) && this.loginform.get('password').hasError('required')">
       <p>Please Enter password</p>
     </div>
-    <div *ngIf="this.loginform.password.hasError('pattern')">
+    <div *ngIf="!this.loginform.get('password').hasError('required') && this.loginform.get('password').hasError('invalidPassword')">
       <p>Please Enter valid password</p>
-    </div> -->
+    </div>
   </div>
   <div>
     <button type="submit" [disabled]="!this.loginform.valid" (click)="login()">Login</button>
   </div>
 </form>
+
+<app-customer-registration></app-customer-registration>
