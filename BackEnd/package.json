@@ -1,0 +1,18 @@
+{
+  "name": "dth_backend",
+  "version": "1.0.0",
+  "description": "Node backend for DTH MEAN Stack application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js",
+    "MEAN",
+    "Angular",
+    "Express.js",
+    "MongoDB"
+  ],
+  "author": "Manu Sharma Viswanadha",
+  "license": "MIT"
+}
