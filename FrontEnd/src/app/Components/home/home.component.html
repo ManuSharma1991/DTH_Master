@@ -1,26 +1,49 @@
-<form [formGroup]="loginform">
-  <div>
-    <div>
-      USERNAME : <input type="text" formControlName="username" required>
-    </div>
-    <div *ngIf="(this.loginform.get('username').dirty || this.loginform.get('username').touched ) && this.loginform.get('username').hasError('required')">
-      <p>Please Enter username</p>
-    </div>
-  </div>
-  <div>
-    <div>
-      PASSWORD : <input type="text" formControlName="password" required>
-    </div>
-    <div *ngIf="(this.loginform.get('password').dirty || this.loginform.get('password').touched ) && this.loginform.get('password').hasError('required')">
-      <p>Please Enter password</p>
-    </div>
-    <div *ngIf="!this.loginform.get('password').hasError('required') && this.loginform.get('password').hasError('invalidPassword')">
-      <p>Please Enter valid password</p>
-    </div>
-  </div>
-  <div>
-    <button type="submit" [disabled]="!this.loginform.valid" (click)="login()">Login</button>
-  </div>
-</form>
+<div class="row">
+  <div class="col mx-auto">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded mx-auto">
+          <h5 class="card-header text-center">Login</h5>
+          <div class="card-body">
+            <form [formGroup]="loginform">
+              <!-- ============================================================================================================ -->
 
-<app-customer-registration></app-customer-registration>
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">USERNAME</span>
+                </div>
+                <input class="form-control" type="text" formControlName="username" required>
+                <div class="input-group-append" *ngIf="(this.loginform.get('username').dirty || this.loginform.get('username').touched ) && this.loginform.get('username').hasError('required')">
+                  <span class="input-group-text alert-danger">Please Enter username</span>
+                </div>
+              </div>
+
+              <!-- ============================================================================================================ -->
+
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">PASSWORD</span>
+                </div>
+                <input class="form-control" type="text" formControlName="password" required>
+                <div class="input-group-append" *ngIf="(this.loginform.get('password').dirty || this.loginform.get('password').touched ) && this.loginform.get('password').hasError('required')">
+                  <span class="input-group-text alert-danger">Please Enter password</span>
+                </div>
+                <div class="input-group-append" *ngIf="!this.loginform.get('password').hasError('required') && this.loginform.get('password').hasError('invalidPassword')">
+                  <span class="input-group-text alert-danger">Please Enter valid password</span>
+                </div>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-outline-primary" type="submit" [disabled]="!this.loginform.valid" (click)="login()">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <div class="col">
+    <app-customer-registration></app-customer-registration>
+  </div>
+</div>

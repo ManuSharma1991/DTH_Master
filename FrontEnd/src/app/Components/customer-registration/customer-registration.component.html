@@ -1,161 +1,188 @@
-<form [formGroup]="customerRegistrationForm" class="form-group">
-  <div>
-    <div>
-      FIRST NAME : <input class="form-control" type="text" formControlName="firstname" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('firstname').dirty || this.customerRegistrationForm.get('firstname').touched ) && this.customerRegistrationForm.get('firstname').hasError('required')">
-      <p>Please Enter firstname</p>
-    </div>
+<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+  <h5 class="card-header text-center">Customer Registration Form</h5>
+  <div class="card-body">
+    <form [formGroup]="customerRegistrationForm" class="form-group">
+
+      <!-- ============================================================================================================ -->
+
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">FIRST NAME</span>
+        </div>
+        <input class="form-control" type="text" formControlName="firstname" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('firstname').dirty || this.customerRegistrationForm.get('firstname').touched ) && this.customerRegistrationForm.get('firstname').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter firstname</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">LAST NAME</span>
+        </div>
+        <input class="form-control" type="text" formControlName="lastname" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('lastname').dirty || this.customerRegistrationForm.get('lastname').touched ) && this.customerRegistrationForm.get('lastname').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter lastname</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">EMAIL ID</span>
+        </div>
+        <input class="form-control" type="text" formControlName="emailid" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('emailid').dirty || this.customerRegistrationForm.get('emailid').touched ) && this.customerRegistrationForm.get('emailid').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter emailid</span>
+        </div>
+        <div class="input-group-append" *ngIf="!this.customerRegistrationForm.get('emailid').hasError('required') && this.customerRegistrationForm.get('emailid').hasError('invalidEmailID')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter Valid Email-ID</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">PHONE NUMBER</span>
+        </div>
+        <input class="form-control" type="text" formControlName="phonenumber" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('phonenumber').dirty || this.customerRegistrationForm.get('phonenumber').touched ) && this.customerRegistrationForm.get('phonenumber').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter phonenumber</span>
+        </div>
+        <div class="input-group-append" *ngIf="!this.customerRegistrationForm.get('phonenumber').hasError('required') && this.customerRegistrationForm.get('phonenumber').hasError('invalidPhoneNumber')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Mobile Number</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">ADDRESS LINE 1</span>
+        </div>
+        <input class="form-control" type="text" formControlName="addressline1" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('addressline1').dirty || this.customerRegistrationForm.get('addressline1').touched ) && this.customerRegistrationForm.get('addressline1').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter addressline1</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">ADDRESS LINE 2</span>
+        </div>
+        <input class="form-control" type="text" formControlName="addressline2">
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">LANDMARK</span>
+        </div>
+        <input class="form-control" type="text" formControlName="landmark" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('landmark').dirty || this.customerRegistrationForm.get('landmark').touched ) && this.customerRegistrationForm.get('landmark').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter landmark</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">PINCODE</span>
+        </div>
+        <input class="form-control" type="text" formControlName="pincode" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('pincode').dirty || this.customerRegistrationForm.get('pincode').touched ) && this.customerRegistrationForm.get('pincode').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter pincode</span>
+        </div>
+        <div class="input-group-append" *ngIf="!this.customerRegistrationForm.get('pincode').hasError('required') && this.customerRegistrationForm.get('pincode').hasError('invalidPincode')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Pincode</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">CITY</span>
+        </div>
+        <input class="form-control" type="text" formControlName="city" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('city').dirty || this.customerRegistrationForm.get('city').touched ) && this.customerRegistrationForm.get('city').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter city</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">STATE</span>
+        </div>
+        <input class="form-control" type="text" formControlName="state" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('state').dirty || this.customerRegistrationForm.get('state').touched ) && this.customerRegistrationForm.get('state').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter state</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">CUSTOMER ID</span>
+        </div>
+        <input class="form-control" type="text" formControlName="customerid" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('customerid').dirty || this.customerRegistrationForm.get('customerid').touched ) && this.customerRegistrationForm.get('customerid').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter customerid</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">PASSWORD</span>
+        </div>
+        <input class="form-control" type="text" formControlName="password" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('password').dirty || this.customerRegistrationForm.get('password').touched ) && this.customerRegistrationForm.get('password').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter password</span>
+        </div>
+        <div class="input-group-append" *ngIf="!this.customerRegistrationForm.get('password').hasError('required') && this.customerRegistrationForm.get('password').hasError('invalidPassword')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid password</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 165px" class="input-group-text">CONFIRM PASSWORD</span>
+        </div>
+        <input class="form-control" type="text" formControlName="confirmpassword" required>
+        <div class="input-group-append" *ngIf="(this.customerRegistrationForm.get('confirmpassword').dirty || this.customerRegistrationForm.get('confirmpassword').touched ) && this.customerRegistrationForm.get('confirmpassword').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter Password</span>
+        </div>
+        <div class="input-group-append" *ngIf="!this.customerRegistrationForm.get('confirmpassword').hasError('required') && this.customerRegistrationForm.get('confirmpassword').hasError('invalidPassword')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Password</span>
+        </div>
+
+
+        <div class="input-group-append" *ngIf="(!this.customerRegistrationForm.get('password').hasError('required') 
+                                      && !this.customerRegistrationForm.get('confirmpassword').hasError('required')
+                                      && !this.customerRegistrationForm.get('confirmpassword').hasError('invalidPassword') 
+                                      && !this.customerRegistrationForm.get('password').hasError('invalidPassword')) 
+                                      && this.customerRegistrationForm.hasError('mismatchedPasswords')">
+          <span style="width: 225px" class="input-group-text alert-danger ">Passwords do not match</span>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-outline-primary" type="submit" [disabled]="!this.customerRegistrationForm.valid" (click)="register()">Register</button>
+      </div>
+    </form>
   </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    <div>
-      LAST NAME : <input class="form-control" type="text" formControlName="lastname" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('lastname').dirty || this.customerRegistrationForm.get('lastname').touched ) && this.customerRegistrationForm.get('lastname').hasError('required')">
-      <p>Please Enter lastname</p>
-    </div>
-  </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    <div>
-      EMAIL ID : <input class="form-control" type="text" formControlName="emailid" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('emailid').dirty || this.customerRegistrationForm.get('emailid').touched ) && this.customerRegistrationForm.get('emailid').hasError('required')">
-      <p>Please Enter emailid</p>
-    </div>
-  </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    <div>
-      PHONE NUMBER : <input class="form-control" type="text" formControlName="phonenumber" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('phonenumber').dirty || this.customerRegistrationForm.get('phonenumber').touched ) && this.customerRegistrationForm.get('phonenumber').hasError('required')">
-      <p>Please Enter phonenumber</p>
-    </div>
-    <div *ngIf="!this.customerRegistrationForm.get('phonenumber').hasError('required') && this.customerRegistrationForm.get('phonenumber').hasError('invalidPhoneNumber')">
-      <p>Please Enter valid Mobile Number</p>
-    </div>
-  </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    <div>
-      ADDRESS LINE 1 : <input class="form-control" type="text" formControlName="addressline1" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('addressline1').dirty || this.customerRegistrationForm.get('addressline1').touched ) && this.customerRegistrationForm.get('addressline1').hasError('required')">
-      <p>Please Enter addressline1</p>
-    </div>
-  </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    ADDRESS LINE 2 : <input class="form-control" type="text" formControlName="addressline2">
-  </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    <div>
-      LANDMARK : <input class="form-control" type="text" formControlName="landmark" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('landmark').dirty || this.customerRegistrationForm.get('landmark').touched ) && this.customerRegistrationForm.get('landmark').hasError('required')">
-      <p>Please Enter landmark</p>
-    </div>
-  </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    <div>
-      PINCODE : <input class="form-control" type="text" formControlName="pincode" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('pincode').dirty || this.customerRegistrationForm.get('pincode').touched ) && this.customerRegistrationForm.get('pincode').hasError('required')">
-      <p>Please Enter pincode</p>
-    </div>
-    <div *ngIf="!this.customerRegistrationForm.get('pincode').hasError('required') && this.customerRegistrationForm.get('pincode').hasError('invalidPincode')">
-      <p>Please Enter valid Pincode</p>
-    </div>
-  </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    <div>
-      CITY : <input class="form-control" type="text" formControlName="city" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('city').dirty || this.customerRegistrationForm.get('city').touched ) && this.customerRegistrationForm.get('city').hasError('required')">
-      <p>Please Enter city</p>
-    </div>
-  </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    <div>
-      STATE : <input class="form-control" type="text" formControlName="state" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('state').dirty || this.customerRegistrationForm.get('state').touched ) && this.customerRegistrationForm.get('state').hasError('required')">
-      <p>Please Enter state</p>
-    </div>
-  </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    <div>
-      CUSTOMER ID : <input class="form-control" type="text" formControlName="customerid" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('customerid').dirty || this.customerRegistrationForm.get('customerid').touched ) && this.customerRegistrationForm.get('customerid').hasError('required')">
-      <p>Please Enter customerid</p>
-    </div>
-  </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    <div>
-      PASSWORD : <input class="form-control" type="text" formControlName="password" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('password').dirty || this.customerRegistrationForm.get('password').touched ) && this.customerRegistrationForm.get('password').hasError('required')">
-      <p>Please Enter password</p>
-    </div>
-    <div *ngIf="!this.customerRegistrationForm.get('password').hasError('required') && this.customerRegistrationForm.get('password').hasError('invalidPassword')">
-      <p>Please Enter valid password</p>
-    </div>
-  </div>
-
-  <!-- ============================================================================================================ -->
-
-  <div>
-    <div>
-      CONFIRM PASSWORD : <input class="form-control" type="text" formControlName="confirmpassword" required>
-    </div>
-    <div *ngIf="(this.customerRegistrationForm.get('confirmpassword').dirty || this.customerRegistrationForm.get('confirmpassword').touched ) && this.customerRegistrationForm.get('confirmpassword').hasError('required')">
-      <p>Please Enter Password</p>
-    </div>
-    <div *ngIf="!this.customerRegistrationForm.get('confirmpassword').hasError('required') && this.customerRegistrationForm.get('confirmpassword').hasError('invalidPassword')">
-      <p>Please Enter valid Password</p>
-    </div>
-  </div>
-
-  <div *ngIf="(!this.customerRegistrationForm.get('password').hasError('required') 
-  && !this.customerRegistrationForm.get('confirmpassword').hasError('required')
-  && !this.customerRegistrationForm.get('confirmpassword').hasError('invalidPassword') 
-  && !this.customerRegistrationForm.get('password').hasError('invalidPassword')) 
-  && this.customerRegistrationForm.hasError('mismatchedPasswords')">
-    <p>Passwords do not match</p>
-  </div>
-
-  <div>
-    <button type="submit" [disabled]="!this.customerRegistrationForm.valid" (click)="register()">Register</button>
-  </div>
-</form>
+</div>

@@ -1,6 +1,8 @@
+import { AuthenticateService } from './../../Services/Login/authenticate.service';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { passwordValidator } from 'src/app/Validators/password-validator';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { passwordValidator } from 'src/app/Validators/password-validator';
 })
 export class HomeComponent {
 
-  constructor() { }
+  constructor(private authenticateService: AuthenticateService, private router: Router) { }
 
   loginform = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -19,5 +21,10 @@ export class HomeComponent {
 
   login() {
     console.log(this.loginform.value);
+    if (this.authenticateService.authenticate(this.loginform.value) === true) {
+      this.router.navigateByUrl('/admindashboard');
+    } else {
+      this.router.navigateByUrl('/home');
+    }
   }
 }

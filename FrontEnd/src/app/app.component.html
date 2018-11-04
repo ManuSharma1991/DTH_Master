@@ -1,1 +1,6 @@
-<app-home></app-home>
+<app-header></app-header>
+<div class="m-5">
+  <app-home *ngIf="!router-outlet"></app-home>
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>
