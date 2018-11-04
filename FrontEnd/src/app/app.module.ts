@@ -10,6 +10,8 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { AppRoutingModule } from './Routes/app-routing/app-routing.module';
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
+import { AdminOperatorManagementComponent } from './Components/admin-operator-management/admin-operator-management.component';
+import { OperatorRegistrationComponent } from './Components/operator-registration/operator-registration.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dash
     CustomerRegistrationComponent,
     HeaderComponent,
     FooterComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    AdminOperatorManagementComponent,
+    OperatorRegistrationComponent
   ],
   imports: [
     BrowserModule,
