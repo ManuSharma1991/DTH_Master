@@ -1,7 +1,7 @@
 <div class="card shadow-lg p-3 mb-5 bg-white rounded">
   <h5 class="card-header text-center">Operator Registration Form</h5>
   <div class="card-body">
-    <form [formGroup]=" operatorRegistrationForm" class="form-group">
+    <form [formGroup]=" operatorUpdationForm" class="form-group">
 
       <!-- ============================================================================================================ -->
 
@@ -11,7 +11,7 @@
           <span style="width: 125px" class="input-group-text">FIRST NAME</span>
         </div>
         <input class="form-control" type="text" formControlName="firstname" required>
-        <div class="input-group-append" *ngIf="(this. operatorRegistrationForm.get('firstname').dirty || this. operatorRegistrationForm.get('firstname').touched ) && this. operatorRegistrationForm.get('firstname').hasError('required')">
+        <div class="input-group-append" *ngIf="(this. operatorUpdationForm.get('firstname').dirty || this. operatorUpdationForm.get('firstname').touched ) && this. operatorUpdationForm.get('firstname').hasError('required')">
           <span style="width: 225px" class="input-group-text alert-danger">Please Enter firstname</span>
         </div>
       </div>
@@ -23,7 +23,7 @@
           <span style="width: 125px" class="input-group-text">LAST NAME</span>
         </div>
         <input class="form-control" type="text" formControlName="lastname" required>
-        <div class="input-group-append" *ngIf="(this. operatorRegistrationForm.get('lastname').dirty || this. operatorRegistrationForm.get('lastname').touched ) && this. operatorRegistrationForm.get('lastname').hasError('required')">
+        <div class="input-group-append" *ngIf="(this. operatorUpdationForm.get('lastname').dirty || this. operatorUpdationForm.get('lastname').touched ) && this. operatorUpdationForm.get('lastname').hasError('required')">
           <span style="width: 225px" class="input-group-text alert-danger">Please Enter lastname</span>
         </div>
       </div>
@@ -35,10 +35,10 @@
           <span style="width: 125px" class="input-group-text">EMAIL ID</span>
         </div>
         <input class="form-control" type="text" formControlName="emailid" required>
-        <div class="input-group-append" *ngIf="(this. operatorRegistrationForm.get('emailid').dirty || this. operatorRegistrationForm.get('emailid').touched ) && this. operatorRegistrationForm.get('emailid').hasError('required')">
+        <div class="input-group-append" *ngIf="(this. operatorUpdationForm.get('emailid').dirty || this. operatorUpdationForm.get('emailid').touched ) && this. operatorUpdationForm.get('emailid').hasError('required')">
           <span style="width: 225px" class="input-group-text alert-danger">Please Enter emailid</span>
         </div>
-        <div class="input-group-append" *ngIf="!this. operatorRegistrationForm.get('emailid').hasError('required') && this. operatorRegistrationForm.get('emailid').hasError('invalidEmailID')">
+        <div class="input-group-append" *ngIf="!this. operatorUpdationForm.get('emailid').hasError('required') && this. operatorUpdationForm.get('emailid').hasError('invalidEmailID')">
           <span style="width: 225px" class="input-group-text alert-danger">Please Enter Valid Email-ID</span>
         </div>
       </div>
@@ -50,10 +50,10 @@
           <span style="width: 125px" class="input-group-text">PHONE NUMBER</span>
         </div>
         <input class="form-control" type="text" formControlName="phonenumber" required>
-        <div class="input-group-append" *ngIf="(this. operatorRegistrationForm.get('phonenumber').dirty || this. operatorRegistrationForm.get('phonenumber').touched ) && this. operatorRegistrationForm.get('phonenumber').hasError('required')">
+        <div class="input-group-append" *ngIf="(this. operatorUpdationForm.get('phonenumber').dirty || this. operatorUpdationForm.get('phonenumber').touched ) && this. operatorUpdationForm.get('phonenumber').hasError('required')">
           <span style="width: 225px" class="input-group-text alert-danger">Please Enter phonenumber</span>
         </div>
-        <div class="input-group-append" *ngIf="!this. operatorRegistrationForm.get('phonenumber').hasError('required') && this. operatorRegistrationForm.get('phonenumber').hasError('invalidPhoneNumber')">
+        <div class="input-group-append" *ngIf="!this. operatorUpdationForm.get('phonenumber').hasError('required') && this. operatorUpdationForm.get('phonenumber').hasError('invalidPhoneNumber')">
           <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Mobile Number</span>
         </div>
       </div>
@@ -71,10 +71,10 @@
             <option value=12>P.M.</option>
           </select>
         </div>
-        <div class="input-group-append" *ngIf="(this. operatorRegistrationForm.get('shiftstarttime').dirty || this. operatorRegistrationForm.get('shiftstarttime').touched ) && this. operatorRegistrationForm.get('shiftstarttime').hasError('required')">
+        <div class="input-group-append" *ngIf="(this. operatorUpdationForm.get('shiftstarttime').dirty || this. operatorUpdationForm.get('shiftstarttime').touched ) && this. operatorUpdationForm.get('shiftstarttime').hasError('required')">
           <span style="width: 225px" class="input-group-text alert-danger">Please Enter shiftstarttime</span>
         </div>
-        <div class="input-group-append" *ngIf="!this. operatorRegistrationForm.get('shiftstarttime').hasError('required') && this. operatorRegistrationForm.get('shiftstarttime').hasError('invalidShiftTime')">
+        <div class="input-group-append" *ngIf="!this. operatorUpdationForm.get('shiftstarttime').hasError('required') && this. operatorUpdationForm.get('shiftstarttime').hasError('invalidShiftTime')">
           <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Shift Time</span>
         </div>
       </div>
@@ -101,27 +101,15 @@
           <span style="width: 175px" class="input-group-text">MAX NO OF CUSTOMERS</span>
         </div>
         <input class="form-control" type="text" formControlName="maximumnumberofcustomers" required>
-        <div class="input-group-append" *ngIf="(this. operatorRegistrationForm.get('maximumnumberofcustomers').dirty || this. operatorRegistrationForm.get('maximumnumberofcustomers').touched ) && this. operatorRegistrationForm.get('maximumnumberofcustomers').hasError('required')">
+        <div class="input-group-append" *ngIf="(this. operatorUpdationForm.get('maximumnumberofcustomers').dirty || this. operatorUpdationForm.get('maximumnumberofcustomers').touched ) && this. operatorUpdationForm.get('maximumnumberofcustomers').hasError('required')">
           <span style="width: 225px" class="input-group-text alert-danger">Please Enter Max No of Customers</span>
         </div>
       </div>
 
       <!-- ============================================================================================================ -->
 
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span style="width: 125px" class="input-group-text">OPERATOR ID</span>
-        </div>
-        <input class="form-control" type="text" formControlName="operatorID" required>
-        <div class="input-group-append" *ngIf="(this. operatorRegistrationForm.get('operatorID').dirty || this. operatorRegistrationForm.get('operatorID').touched ) && this. operatorRegistrationForm.get('operatorID').hasError('required')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter OperatorID</span>
-        </div>
-      </div>
-
-      <!-- ============================================================================================================ -->
-
       <div class="text-center">
-        <button class="btn btn-outline-primary" type="submit" [disabled]="!this.operatorRegistrationForm.valid" (click)="register()">Register</button>
+        <button class="btn btn-outline-primary" type="submit" [disabled]="!this.operatorUpdationForm.valid" (click)="updateoperator(operator)">Update</button>
       </div>
     </form>
   </div>

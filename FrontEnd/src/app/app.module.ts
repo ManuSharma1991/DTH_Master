@@ -12,6 +12,10 @@ import { AppRoutingModule } from './Routes/app-routing/app-routing.module';
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 import { AdminOperatorManagementComponent } from './Components/admin-operator-management/admin-operator-management.component';
 import { OperatorRegistrationComponent } from './Components/operator-registration/operator-registration.component';
+import { OperatorViewComponent } from './Components/operator-view/operator-view.component';
+import { OperatorDetailedViewComponent } from './Components/operator-detailed-view/operator-detailed-view.component';
+import { MeridianPipe } from './Validators/Pipes/meridian.pipe';
+import { OperatorUpdateComponent } from './Components/operator-update/operator-update.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { OperatorRegistrationComponent } from './Components/operator-registratio
     FooterComponent,
     AdminDashboardComponent,
     AdminOperatorManagementComponent,
-    OperatorRegistrationComponent
+    OperatorRegistrationComponent,
+    OperatorViewComponent,
+    OperatorDetailedViewComponent,
+    MeridianPipe,
+    OperatorUpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { OperatorService } from './../../Services/Operator/operator.service';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { passwordValidator } from 'src/app/Validators/password-validator';
 import { phoneNumberValidator } from 'src/app/Validators/phone-number-validator';
-import { pincodeValidator } from 'src/app/Validators/pincode-validator';
-import { passwordMatcher } from 'src/app/Validators/password-matcher';
 import { emailValidator } from 'src/app/Validators/email-validator';
 
-import * as $ from 'jquery';
+import { shiftTimeValidator } from 'src/app/Validators/shift-time-validator';
 
 @Component({
   selector: 'app-operator-registration',
@@ -16,14 +14,67 @@ import * as $ from 'jquery';
 })
 export class OperatorRegistrationComponent {
 
-  constructor() { }
+  constructor(private operatorService: OperatorService) { }
 
   operatorRegistrationForm = new FormGroup({
     firstname: new FormControl('', [Validators.required]),
     lastname: new FormControl('', [Validators.required]),
     emailid: new FormControl('', Validators.compose([Validators.required, emailValidator])),
     phonenumber: new FormControl('', Validators.compose([Validators.required, phoneNumberValidator])),
-    shiftstarttime: new FormControl('', Validators.required)
-  }, { validators: passwordMatcher });
+    startmeridian: new FormControl('', Validators.required),
+    shiftstarttime: new FormControl('', Validators.compose([Validators.required, shiftTimeValidator])),
+    shiftendtime: new FormControl(''),
+    endmeridian: new FormControl(''),
+    maximumnumberofcustomers: new FormControl('', Validators.required),
+    operatorID: new FormControl(''),
+    password: new FormControl('Operator@1234')
+  });
 
+  shiftEndTimeCalculator() {
+    const startTime = parseInt(this.operatorRegistrationForm.get('shiftstarttime').value, 10);
+    const meridian = parseInt(this.operatorRegistrationForm.get('startmeridian').value, 10);
+    let endTime = 0;
+    let endMeridian = 0;
+    if (meridian === 0) {
+      if ((startTime + 8) <= 12) {
+        endTime = startTime + 8;
+        endMeridian = 0;
+        this.operatorRegistrationForm.controls['shiftendtime'].setValue(endTime);
+        this.operatorRegistrationForm.controls['endmeridian'].setValue(endMeridian);
+      } else if (((startTime + 8) > 12 && (startTime + 8) < 19) || ((startTime + 8) > 20 && (startTime + 8) <= 24)) {
+        endTime = startTime + 8 - 12;
+        endMeridian = 12;
+        this.operatorRegistrationForm.controls['shiftendtime'].setValue(endTime);
+        this.operatorRegistrationForm.controls['endmeridian'].setValue(endMeridian);
+      } else if ((startTime + 8) === 20) {
+        endTime = startTime + 8 - 12;
+        endMeridian = 0;
+        this.operatorRegistrationForm.controls['shiftendtime'].setValue(endTime);
+        this.operatorRegistrationForm.controls['endmeridian'].setValue(endMeridian);
+      }
+    } else if (meridian === 12) {
+      if ((startTime + meridian + 8) < 24) {
+        endTime = startTime + meridian + 8 - 12;
+        endMeridian = 12;
+        this.operatorRegistrationForm.controls['shiftendtime'].setValue(endTime);
+        this.operatorRegistrationForm.controls['endmeridian'].setValue(endMeridian);
+      } else if ((startTime + meridian + 8) === 24) {
+        endTime = startTime + meridian + 8 - 12;
+        endMeridian = 0;
+        this.operatorRegistrationForm.controls['shiftendtime'].setValue(endTime);
+        this.operatorRegistrationForm.controls['endmeridian'].setValue(endMeridian);
+      } else if ((startTime + meridian + 8) > 24) {
+        endTime = startTime + meridian + 8 - 24;
+        endMeridian = 0;
+        this.operatorRegistrationForm.controls['shiftendtime'].setValue(endTime);
+        this.operatorRegistrationForm.controls['endmeridian'].setValue(endMeridian);
+      }
+    }
+
+  }
+
+  register() {
+    console.log(this.operatorRegistrationForm.value);
+    this.operatorService.register(this.operatorRegistrationForm.value);
+  }
 }
