@@ -1,5 +1,5 @@
 <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-  <nav class="navbar sticky-top navbar-light text-center bg-success">
+  <nav class="navbar navbar-light text-center bg-success">
     <a class="navbar-brand mb-0 h1 mx-auto" href="#">Welcome Administrator</a>
     <button class="btn btn-danger" type="button">Logout</button>
   </nav>
@@ -7,15 +7,15 @@
     <div class="row">
       <div class="col text-center m-3">
         <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar sticky-top navbar-light text-center bg-warning">
+          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
             <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/adminoperatormanagement">Operator Management</a>
           </nav>
         </div>
       </div>
       <div class="col text-center m-3">
         <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar sticky-top navbar-light text-center bg-warning">
-            <a class="navbar-brand mb-0 h1 mx-auto" href="#">Retailer Management</a>
+          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
+            <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/adminretailermanagement">Retailer Management</a>
           </nav>
         </div>
       </div>
@@ -23,20 +23,20 @@
     <div class="row">
       <div class="col text-center m-3">
         <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar sticky-top navbar-light text-center bg-warning">
-            <a class="navbar-brand mb-0 h1 mx-auto" href="#">Distributor Management</a>
+          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
+            <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/admindistributormanagement">Distributor Management</a>
           </nav>
         </div>
       </div>
       <div class="col text-center m-3">
         <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar sticky-top navbar-light text-center bg-warning">
-            <a class="navbar-brand mb-0 h1 mx-auto" href="#">Customer Management</a>
+          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
+            <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/admincustomermanagement">Customer Management</a>
           </nav>
         </div>
       </div>
     </div>
-  </div>
 
+  </div>
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>

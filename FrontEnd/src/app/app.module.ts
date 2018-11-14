@@ -16,6 +16,9 @@ import { OperatorViewComponent } from './Components/operator-view/operator-view.
 import { OperatorDetailedViewComponent } from './Components/operator-detailed-view/operator-detailed-view.component';
 import { MeridianPipe } from './Validators/Pipes/meridian.pipe';
 import { OperatorUpdateComponent } from './Components/operator-update/operator-update.component';
+import { AdminRetailerManagementComponent } from './Components/admin-retailer-management/admin-retailer-management.component';
+import { AdminDistributorManagementComponent } from './Components/admin-distributor-management/admin-distributor-management.component';
+import { AdminCustomerManagementComponent } from './Components/admin-customer-management/admin-customer-management.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { OperatorUpdateComponent } from './Components/operator-update/operator-u
     OperatorViewComponent,
     OperatorDetailedViewComponent,
     MeridianPipe,
-    OperatorUpdateComponent
+    OperatorUpdateComponent,
+    AdminRetailerManagementComponent,
+    AdminDistributorManagementComponent,
+    AdminCustomerManagementComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,7 @@
+import { AdminCustomerManagementComponent } from './../../Components/admin-customer-management/admin-customer-management.component';
+// tslint:disable-next-line:max-line-length
+import { AdminDistributorManagementComponent } from './../../Components/admin-distributor-management/admin-distributor-management.component';
+import { AdminRetailerManagementComponent } from './../../Components/admin-retailer-management/admin-retailer-management.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -12,7 +16,10 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'admindashboard', component: AdminDashboardComponent },
   { path: 'operatordetailedview/:operatorID', component: OperatorDetailedViewComponent },
-  { path: 'adminoperatormanagement', component: AdminOperatorManagementComponent }
+  { path: 'adminoperatormanagement', component: AdminOperatorManagementComponent },
+  { path: 'adminretailermanagement', component: AdminRetailerManagementComponent },
+  { path: 'admindistributormanagement', component: AdminDistributorManagementComponent },
+  { path: 'admincustomermanagement', component: AdminCustomerManagementComponent }
 ];
 
 @NgModule({
