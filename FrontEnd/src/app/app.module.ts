@@ -19,6 +19,9 @@ import { OperatorUpdateComponent } from './Components/operator-update/operator-u
 import { AdminRetailerManagementComponent } from './Components/admin-retailer-management/admin-retailer-management.component';
 import { AdminDistributorManagementComponent } from './Components/admin-distributor-management/admin-distributor-management.component';
 import { AdminCustomerManagementComponent } from './Components/admin-customer-management/admin-customer-management.component';
+import { RetailerRegistrationComponent } from './Components/retailer-registration/retailer-registration.component';
+import { RetailerViewComponent } from './Components/retailer-view/retailer-view.component';
+import { RetailerDetailedViewComponent } from './Components/retailer-detailed-view/retailer-detailed-view.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { AdminCustomerManagementComponent } from './Components/admin-customer-ma
     OperatorUpdateComponent,
     AdminRetailerManagementComponent,
     AdminDistributorManagementComponent,
-    AdminCustomerManagementComponent
+    AdminCustomerManagementComponent,
+    RetailerRegistrationComponent,
+    RetailerViewComponent,
+    RetailerDetailedViewComponent
   ],
   imports: [
     BrowserModule,
