@@ -14,6 +14,7 @@ import { shiftTimeValidator } from 'src/app/Validators/shift-time-validator';
 })
 export class OperatorRegistrationComponent {
 
+  msg: String;
   constructor(private operatorService: OperatorService) { }
 
   operatorRegistrationForm = new FormGroup({
@@ -75,6 +76,8 @@ export class OperatorRegistrationComponent {
 
   register() {
     console.log(this.operatorRegistrationForm.value);
-    this.operatorService.register(this.operatorRegistrationForm.value);
+    this.operatorService.register(this.operatorRegistrationForm.value).subscribe((data) => {
+      this.msg = data;
+    });
   }
 }

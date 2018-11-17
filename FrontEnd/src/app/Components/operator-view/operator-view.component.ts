@@ -10,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class OperatorViewComponent implements OnInit {
 
   operatorList: Operator[];
+  errmessage: string;
   constructor(private operatorService: OperatorService) { }
 
   ngOnInit() {
-    this.operatorList = this.operatorService.viewOperators();
+    this.operatorService.viewOperators().subscribe((data) => {
+      // console.log(data);
+      this.operatorList = data;
+    }, (error) => {
+      this.errmessage = 'Details of Customers can\'t be loaded due to server error';
+    });
   }
 
 }

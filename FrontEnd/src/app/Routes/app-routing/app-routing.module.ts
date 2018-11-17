@@ -13,7 +13,7 @@ import { OperatorViewComponent } from 'src/app/Components/operator-view/operator
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/admindashboard', pathMatch: 'full' }, // TO-DO : need to change this to home component
   { path: 'admindashboard', component: AdminDashboardComponent },
   { path: 'operatordetailedview/:operatorID', component: OperatorDetailedViewComponent },
   { path: 'adminoperatormanagement', component: AdminOperatorManagementComponent },

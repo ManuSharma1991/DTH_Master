@@ -13,7 +13,8 @@ export class RetailerViewComponent implements OnInit {
   constructor(private operatorService: OperatorService) { }
 
   ngOnInit() {
-    this.operatorList = this.operatorService.viewOperators();
+    this.operatorService.viewOperators().subscribe((data) => this.operatorList = data);
+    console.log(this.operatorList);
   }
 
 

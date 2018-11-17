@@ -1,7 +1,8 @@
 import { OperatorService } from './../../Services/Operator/operator.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Operator } from 'src/app/Models/operator';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-operator-detailed-view',
@@ -11,11 +12,19 @@ import { Operator } from 'src/app/Models/operator';
 export class OperatorDetailedViewComponent implements OnInit {
   operator: Operator;
   flag = true;
+  errmessage: string;
+
   constructor(private operatorSerice: OperatorService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    const operatorID = this.route.snapshot.paramMap.get('operatorID');
-    this.operator = this.operatorSerice.getOperatorByID(operatorID);
+    this.route.params.pipe(switchMap((params: Params) => {
+      return this.operatorSerice.getOperatorByID(params['custid']);
+    })).subscribe(data => {
+      this.operator = data;
+      console.log(this.operator);
+    }, (error) => {
+      this.errmessage = 'Customer details by Id not exist';
+    });
   }
 
   update(operator: Operator) {
