@@ -17,9 +17,9 @@ export class OperatorDetailedViewComponent implements OnInit {
   constructor(private operatorSerice: OperatorService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.route.params.pipe(switchMap((params: Params) => {
-      return this.operatorSerice.getOperatorByID(params['custid']);
-    })).subscribe(data => {
+    const operatorID = this.route.snapshot.paramMap.get('operatorID');
+    console.log(operatorID);
+    return this.operatorSerice.getOperatorByID(operatorID).subscribe(data => {
       this.operator = data;
       console.log(this.operator);
     }, (error) => {

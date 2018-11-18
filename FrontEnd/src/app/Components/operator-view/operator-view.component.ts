@@ -15,10 +15,10 @@ export class OperatorViewComponent implements OnInit {
 
   ngOnInit() {
     this.operatorService.viewOperators().subscribe((data) => {
-      // console.log(data);
+      console.log(data);
       this.operatorList = data;
     }, (error) => {
-      this.errmessage = 'Details of Customers can\'t be loaded due to server error';
+      this.errmessage = 'Details of Operators can\'t be loaded due to server error';
     });
   }
 

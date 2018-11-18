@@ -48,7 +48,38 @@ exports.findAll = (req, res) => {
 
 // Find a single operator with a operatorId
 exports.findOne = (req, res) => {
+    console.log('line 51 ' + req.params.operatorId)
 
+    Operator.findOne({
+        operatorID: req.params.operatorId
+    }, function (err, operator) {
+        if (err) {
+            return res.status(200).send(err);
+        }
+        return res.status(200).send(operator);
+    })
+
+    // Operator.findOne({
+    //         'operator.operatorID': req.params.operatorId
+    //     })
+    //     .then(operator => {
+    //         if (!operator) {
+    //             return res.status(404).send({
+    //                 message: "Operator not found with id ==================== " + req.params.operatorId
+    //             });
+    //         }
+    //         res.send(operator);
+    //     }).catch(err => {
+    //         console.log(err);
+    //         if (err.kind === 'ObjectId') {
+    //             return res.status(404).send({
+    //                 message: "Operator not found with id " + req.params.operatorId
+    //             });
+    //         }
+    //         return res.status(500).send({
+    //             message: "Error retrieving operator with id " + req.params.operatorId
+    //         });
+    //     });
 };
 
 // Update a operator identified by the operatorId in the request
