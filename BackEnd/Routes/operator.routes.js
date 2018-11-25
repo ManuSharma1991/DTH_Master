@@ -2,17 +2,17 @@ module.exports = (app) => {
     const operators = require('../Controllers/operator.controller.js');
 
     // Create a new operator
-    app.post('/operators', operators.create);
+    app.post('/operators/registeroperator', operators.create);
 
     // Retrieve all operators
-    app.get('/operators', operators.findAll);
+    app.get('/operators/viewalloperators', operators.findAll);
 
     // Retrieve a single operator with operatorId
-    app.get('/operators/:operatorId', operators.findOne);
+    app.get('/operators/getoperatorbyid/:operatorId', operators.findOne);
 
     // Update a operator with operatorId
-    app.put('/operators/:operatorId', operators.update);
+    app.put('/operators/updateoperator/:operatorId', operators.update);
 
     // Delete a operator with operatorId
-    app.delete('/operators/:operatorId', operators.delete);
+    app.delete('/operators/deleteoperator/:operatorId', operators.delete);
 }
