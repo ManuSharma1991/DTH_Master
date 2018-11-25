@@ -34,6 +34,13 @@ app.get('/', (req, res) => {
 require('./Routes/operator.routes.js')(app);
 require('./Routes/retailer.routes.js')(app);
 require('./Routes/customer.routes.js')(app);
+require('./Routes/distributor.routes.js')(app);
+require('./Routes/stb.routes.js')(app);
+require('./Routes/stbinventorylist.routes.js')(app);
+require('./Routes/channel.routes.js')(app);
+require('./Routes/channelpackage.routes.js')(app);
+require('./Routes/vod.routes.js')(app);
+
 
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");

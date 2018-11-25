@@ -2,17 +2,17 @@ module.exports = (app) => {
     const retailers = require('../Controllers/retailer.controller.js');
 
     // Create a new retailer
-    app.post('/retailers', retailers.create);
+    app.post('/retailers/registerretailer', retailers.create);
 
     // Retrieve all retailers
-    app.get('/retailers', retailers.findAll);
+    app.get('/retailers/viewallretailers', retailers.findAll);
 
     // Retrieve a single retailer with retailerId
-    app.get('/retailers/:retailerId', retailers.findOne);
+    app.get('/retailers/getretailerbyid/:retailerId', retailers.findOne);
 
     // Update a retailer with retailerId
-    app.put('/retailers/:retailerId', retailers.update);
+    app.put('/retailers/updateretailer/:retailerId', retailers.update);
 
     // Delete a retailer with retailerId
-    app.delete('/retailers/:retailerId', retailers.delete);
+    app.delete('/retailers/deleteretailer/:retailerId', retailers.delete);
 }
