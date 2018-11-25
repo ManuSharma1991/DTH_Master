@@ -1,15 +1,15 @@
-import { AdminCustomerManagementComponent } from './../../Components/admin-customer-management/admin-customer-management.component';
 // tslint:disable-next-line:max-line-length
-import { AdminDistributorManagementComponent } from './../../Components/admin-distributor-management/admin-distributor-management.component';
-import { AdminRetailerManagementComponent } from './../../Components/admin-retailer-management/admin-retailer-management.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './../../Components/home/home.component';
-import { AdminDashboardComponent } from './../../Components/admin-dashboard/admin-dashboard.component';
-import { AdminOperatorManagementComponent } from './../../Components/admin-operator-management/admin-operator-management.component';
-import { OperatorDetailedViewComponent } from 'src/app/Components/operator-detailed-view/operator-detailed-view.component';
-import { OperatorViewComponent } from 'src/app/Components/operator-view/operator-view.component';
+import { OperatorDetailedViewComponent } from 'src/app/Components/Operator/operator-detailed-view/operator-detailed-view.component';
+import { AdminDashboardComponent } from 'src/app/Components/Admin/admin-dashboard/admin-dashboard.component';
+import { AdminOperatorManagementComponent } from 'src/app/Components/Admin/admin-operator-management/admin-operator-management.component';
+import { AdminRetailerManagementComponent } from 'src/app/Components/Admin/admin-retailer-management/admin-retailer-management.component';
+// tslint:disable-next-line:max-line-length
+import { AdminDistributorManagementComponent } from 'src/app/Components/Admin/admin-distributor-management/admin-distributor-management.component';
+import { AdminCustomerManagementComponent } from 'src/app/Components/Admin/admin-customer-management/admin-customer-management.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },

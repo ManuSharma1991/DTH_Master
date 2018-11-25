@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Operator } from './../../Models/operator';
-import { OperatorService } from './../../Services/Operator/operator.service';
+import { OperatorService } from 'src/app/Services/Operator/operator.service';
+import { Operator } from 'src/app/Models/operator';
 
 @Component({
   selector: 'app-retailer-view',

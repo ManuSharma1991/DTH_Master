@@ -1,10 +1,10 @@
 import { pincodeValidator } from 'src/app/Validators/pincode-validator';
-import { OperatorService } from './../../Services/Operator/operator.service';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { phoneNumberValidator } from 'src/app/Validators/phone-number-validator';
 import { emailValidator } from 'src/app/Validators/email-validator';
+import { OperatorService } from 'src/app/Services/Operator/operator.service';
 
 
 @Component({

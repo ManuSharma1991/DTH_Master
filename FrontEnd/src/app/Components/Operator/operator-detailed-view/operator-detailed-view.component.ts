@@ -1,4 +1,4 @@
-import { OperatorService } from './../../Services/Operator/operator.service';
+import { OperatorService } from './../../../Services/Operator/operator.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Operator } from 'src/app/Models/operator';

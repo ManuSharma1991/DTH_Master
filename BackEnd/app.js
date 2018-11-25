@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors')
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 const dbConfig = require('./Configurations/database.config.js');
-const mongoose = require('mongoose');
+
 
 mongoose.Promise = global.Promise;
 
@@ -31,6 +32,8 @@ app.get('/', (req, res) => {
 });
 
 require('./Routes/operator.routes.js')(app);
+require('./Routes/retailer.routes.js')(app);
+require('./Routes/customer.routes.js')(app);
 
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");
