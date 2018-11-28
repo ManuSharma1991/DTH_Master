@@ -78,7 +78,7 @@ exports.update = (req, res) => {
 
     // Find operator and update it with the request body
     Operator.findOneAndUpdate({
-            operatorID: req.params.operatorId
+            operatorID: req.body.operatorID
         }, {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -93,27 +93,24 @@ exports.update = (req, res) => {
             endmeridian: req.body.endmeridian,
 
             maximumnumberofcustomers: req.body.maximumnumberofcustomers,
-
-            operatorID: req.body.operatorID,
-            password: req.body.password || 'Operator@1234'
         }, {
             new: true
         })
         .then(operator => {
             if (!operator) {
                 return res.status(404).send({
-                    message: "Operator not found with id " + req.params.operatorId
+                    message: "Operator not found with id " + req.body.operatorId
                 });
             }
             res.send(operator);
         }).catch(err => {
             if (err.kind === 'ObjectId') {
                 return res.status(404).send({
-                    message: "Operator not found with id " + req.params.operatorId
+                    message: "Operator not found with id " + req.body.operatorId
                 });
             }
             return res.status(500).send({
-                message: "Error updating operator with id " + req.params.operatorId
+                message: "Error updating operator with id " + req.body.operatorId
             });
         });
 };

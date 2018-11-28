@@ -1,6 +1,6 @@
 import { Operator } from 'src/app/Models/operator';
 import { Component, OnInit } from '@angular/core';
-import { OperatorService } from 'src/app/Services/Operator/operator.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-operator-view',
@@ -8,18 +8,12 @@ import { OperatorService } from 'src/app/Services/Operator/operator.service';
   styleUrls: ['./operator-view.component.css']
 })
 export class OperatorViewComponent implements OnInit {
-
   operatorList: Operator[];
-  errmessage: string;
-  constructor(private operatorService: OperatorService) { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.operatorService.viewOperators().subscribe((data) => {
-      console.log(data);
-      this.operatorList = data;
-    }, (error) => {
-      this.errmessage = 'Details of Operators can\'t be loaded due to server error';
+    this.route.data.subscribe(data => {
+      this.operatorList = data.Operator;
     });
   }
-
 }

@@ -1,7 +1,7 @@
 <div class="card shadow-lg p-3 mb-5 bg-white rounded">
   <h5 class="card-header text-center">Operator List</h5>
   <div class="card-body">
-    <table class="table">
+    <table class="table" *ngIf="operatorList.length>0">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -20,8 +20,8 @@
         </tr>
       </tbody>
     </table>
-    <!-- <span *ngIf="!operatorList.length>0">There are no Operators present in Database. Please Use the registration form
-      to create operators</span> -->
+    <span *ngIf="operatorList.length == 0">There are no Operators present in Database. Please Use the registration form
+      to create operators {{errormessage}}</span>
   </div>
 </div>
 <router-outlet></router-outlet>

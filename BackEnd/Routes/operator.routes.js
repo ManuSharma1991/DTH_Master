@@ -11,7 +11,7 @@ module.exports = (app) => {
     app.get('/operators/getoperatorbyid/:operatorId', operators.findOne);
 
     // Update a operator with operatorId
-    app.put('/operators/updateoperator/:operatorId', operators.update);
+    app.put('/operators/updateoperator', operators.update);
 
     // Delete a operator with operatorId
     app.delete('/operators/deleteoperator/:operatorId', operators.delete);

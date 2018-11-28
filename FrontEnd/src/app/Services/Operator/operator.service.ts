@@ -1,98 +1,64 @@
+import { HttpClient } from '@angular/common/http';
 import { Operator } from './../../Models/operator';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Constants } from '../../Models/constants';
+import { UtilityService } from '../Utilities/utility.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OperatorService {
+  constructor(
+    private _http: HttpClient,
+    private _utilityService: UtilityService
+  ) {}
+  private baseURL =
+    Constants.BASE_URL + Constants.PORT + Constants.BASE_OPERATOR_URL;
 
-  private registerOperatorUrl = 'http://localhost:3000/operators';
-  private getOperatorsUrl = 'http://localhost:3000/operators';
-  private getOperatorByIdUrl = 'http://localhost:3000/operators/';
-
-  operatorList: Operator[] = [{
-    'firstname': 'Manu',
-    'lastname': 'Sharma',
-    'emailid': 'manu.viswanad@gmail.com',
-    'phonenumber': 9110783433,
-    'shiftstarttime': 8,
-    'shiftendtime': 4,
-    'startmeridian': 0,
-    'endmeridian': 12,
-    'maximumnumberofcustomers': 20,
-    'totalnumberofactivecustomers': 1,
-    'operatorID': 'O-Manu',
-    'password': 'Manu@1991',
-  }];
-
-  observableOperatorList: Operator[];
-
-  updatedOperator: Operator;
-  i: number;
-  constructor(private httpservice: HttpClient) { }
-
-  handleResponse(resp: Response | any) {
-    if (resp instanceof Response) {
-      return resp.json();
-    } else {
-      return resp;
-    }
-  }
-
-  register(operator: Operator): Observable<String> {
-    return this.httpservice.post(this.registerOperatorUrl, operator).pipe(
-      map((resp) => {
-        return this.handleResponse(resp);
-      }), catchError((error) => {
-        return this.handleResponse(error);
-      })
+  getAllOperators(): Observable<Operator[]> {
+    return this._http.get(this.baseURL + Constants.GET_OPERATOR_URL).pipe(
+      map(response => this._utilityService.handleResult(response)),
+      catchError(error => this._utilityService.handleError(error))
     );
   }
 
-  viewOperators(): Observable<any> {
-    return this.httpservice.get(this.getOperatorsUrl).pipe(
-      map((resp) => {
-        return this.handleResponse(resp);
-      }), catchError((error) => {
-        return this.handleResponse(error);
-      })
-    );
+  insertOperator(operator: Operator): Observable<Operator> {
+    return this._http
+      .post(this.baseURL + Constants.POST_OPERATOR_URL, operator)
+      .pipe(
+        map(response => {
+          return this._utilityService.handleResult(response);
+        }),
+        catchError(error => this._utilityService.handleError(error))
+      );
   }
 
-  getOperatorByID(operatorID: String): Observable<Operator> {
-    return this.httpservice.get(this.getOperatorByIdUrl + operatorID).pipe(
-      map((resp) => {
-        return this.handleResponse(resp);
-      }), catchError((error) => {
-        return this.handleResponse(error);
-      })
-    );
+  getOperatorById(operatorId: String): Observable<Operator> {
+    return this._http
+      .get(this.baseURL + Constants.GETONE_OPERATOR_URL + operatorId)
+      .pipe(
+        map(response => this._utilityService.handleResult(response)),
+        catchError(error => this._utilityService.handleError(error))
+      );
   }
 
-  update(operator: Operator) {
-    this.updatedOperator = operator;
+  updateOperator(operator: Operator): Observable<Operator> {
+    return this._http
+      .put(this.baseURL + Constants.UPDATE_OPERATOR_URL, operator)
+      .pipe(
+        map(response => this._utilityService.handleResult(response)),
+        catchError(error => this._utilityService.handleError(error))
+      );
   }
 
-  updateOperator(operator: Operator) {
-    console.log(operator.operatorID);
-    for (this.i = 0; this.i < this.operatorList.length; this.i++) {
-      if (this.operatorList[this.i].operatorID === operator.operatorID) {
-        console.log(operator.operatorID);
-        const index = this.operatorList.indexOf(this.operatorList[this.i]);
-        this.operatorList.splice(index, 1, operator);
-      }
-    }
-  }
-
-  deleteOperator(operatorID: String) {
-    for (this.i = 0; this.i < this.operatorList.length; this.i++) {
-      if (this.operatorList[this.i].operatorID === operatorID) {
-        const index = this.operatorList.indexOf(this.operatorList[this.i]);
-        this.operatorList.splice(index, 1);
-      }
-    }
+  deleteOperator(operatorId: String): Observable<Operator> {
+    return this._http
+      .delete(this.baseURL + Constants.DELETE_OPERATOR_URL + operatorId)
+      .pipe(
+        map(response => this._utilityService.handleResult(response)),
+        catchError(error => this._utilityService.handleError(error))
+      );
   }
 }

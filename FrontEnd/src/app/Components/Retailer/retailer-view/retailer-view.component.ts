@@ -8,14 +8,13 @@ import { Operator } from 'src/app/Models/operator';
   styleUrls: ['./retailer-view.component.css']
 })
 export class RetailerViewComponent implements OnInit {
-
   operatorList: Operator[];
-  constructor(private operatorService: OperatorService) { }
+  constructor(private operatorService: OperatorService) {}
 
   ngOnInit() {
-    this.operatorService.viewOperators().subscribe((data) => this.operatorList = data);
+    this.operatorService
+      .getAllOperators()
+      .subscribe(data => (this.operatorList = data));
     console.log(this.operatorList);
   }
-
-
 }

@@ -1,3 +1,5 @@
+import { TestService } from 'src/app/Services/Utilities/test.service';
+import { OperatorService } from './Services/Operator/operator.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +27,7 @@ import { AdminRetailerManagementComponent } from './Components/Admin/admin-retai
 // tslint:disable-next-line:max-line-length
 import { AdminDistributorManagementComponent } from './Components/Admin/admin-distributor-management/admin-distributor-management.component';
 import { AdminCustomerManagementComponent } from './Components/Admin/admin-customer-management/admin-customer-management.component';
+import { UtilityService } from './Services/Utilities/utility.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,7 @@ import { AdminCustomerManagementComponent } from './Components/Admin/admin-custo
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [OperatorService, TestService, UtilityService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

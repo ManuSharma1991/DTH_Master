@@ -14,27 +14,27 @@ export class OperatorDetailedViewComponent implements OnInit {
   flag = true;
   errmessage: string;
 
-  constructor(private operatorSerice: OperatorService, private route: ActivatedRoute, private router: Router) { }
+  constructor(
+    private operatorSerice: OperatorService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    const operatorID = this.route.snapshot.paramMap.get('operatorID');
-    console.log(operatorID);
-    return this.operatorSerice.getOperatorByID(operatorID).subscribe(data => {
-      this.operator = data;
-      console.log(this.operator);
-    }, (error) => {
-      this.errmessage = 'Customer details by Id not exist';
+    this.route.data.subscribe(data => {
+      console.log(data);
+      this.operator = data.Operator;
     });
   }
 
   update(operator: Operator) {
     this.flag = false;
-    this.operatorSerice.update(operator);
+    this.operatorSerice.updateOperator(operator);
   }
 
   delete(OperatorID: String) {
-    this.operatorSerice.deleteOperator(OperatorID);
-    this.router.navigateByUrl('/adminoperatormanagement');
+    return this.operatorSerice.deleteOperator(OperatorID).subscribe(data => {
+      this.router.navigateByUrl('/adminoperatormanagement');
+    });
   }
-
 }

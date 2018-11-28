@@ -1,3 +1,4 @@
+import { Test2Service } from './../../Services/Utilities/test2.service';
 // tslint:disable-next-line:max-line-length
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,20 +11,38 @@ import { AdminRetailerManagementComponent } from 'src/app/Components/Admin/admin
 // tslint:disable-next-line:max-line-length
 import { AdminDistributorManagementComponent } from 'src/app/Components/Admin/admin-distributor-management/admin-distributor-management.component';
 import { AdminCustomerManagementComponent } from 'src/app/Components/Admin/admin-customer-management/admin-customer-management.component';
+import { TestService } from 'src/app/Services/Utilities/test.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/admindashboard', pathMatch: 'full' }, // TO-DO : need to change this to home component
   { path: 'admindashboard', component: AdminDashboardComponent },
-  { path: 'operatordetailedview/:operatorID', component: OperatorDetailedViewComponent },
-  { path: 'adminoperatormanagement', component: AdminOperatorManagementComponent },
-  { path: 'adminretailermanagement', component: AdminRetailerManagementComponent },
-  { path: 'admindistributormanagement', component: AdminDistributorManagementComponent },
-  { path: 'admincustomermanagement', component: AdminCustomerManagementComponent }
+  {
+    path: 'operatordetailedview/:operatorID',
+    component: OperatorDetailedViewComponent,
+    resolve: { Operator: TestService }
+  },
+  {
+    path: 'adminoperatormanagement',
+    component: AdminOperatorManagementComponent,
+    resolve: { Operator: Test2Service }
+  },
+  {
+    path: 'adminretailermanagement',
+    component: AdminRetailerManagementComponent
+  },
+  {
+    path: 'admindistributormanagement',
+    component: AdminDistributorManagementComponent
+  },
+  {
+    path: 'admincustomermanagement',
+    component: AdminCustomerManagementComponent
+  }
 ];
 
 @NgModule({
   exports: [RouterModule],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
