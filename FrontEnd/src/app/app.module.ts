@@ -1,5 +1,4 @@
 import { TestService } from 'src/app/Services/Utilities/test.service';
-import { OperatorService } from './Services/Operator/operator.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -7,27 +6,29 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './Components/home/home.component';
-import { HeaderComponent } from './Components/header/header.component';
-import { FooterComponent } from './Components/footer/footer.component';
-import { AppRoutingModule } from './Routes/app-routing/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { MeridianPipe } from './Validators/Pipes/meridian.pipe';
-import { OperatorRegistrationComponent } from './Components/Operator/operator-registration/operator-registration.component';
-import { OperatorViewComponent } from './Components/Operator/operator-view/operator-view.component';
-import { OperatorDetailedViewComponent } from './Components/Operator/operator-detailed-view/operator-detailed-view.component';
-import { OperatorUpdateComponent } from './Components/Operator/operator-update/operator-update.component';
 import { RetailerRegistrationComponent } from './Components/Retailer/retailer-registration/retailer-registration.component';
 import { RetailerViewComponent } from './Components/Retailer/retailer-view/retailer-view.component';
 import { RetailerDetailedViewComponent } from './Components/Retailer/retailer-detailed-view/retailer-detailed-view.component';
 // tslint:disable-next-line:max-line-length
-import { CustomerRegistrationComponent } from './Components/Customer/customer-registration/customer-registration.component';
-import { AdminDashboardComponent } from './Components/Admin/admin-dashboard/admin-dashboard.component';
-import { AdminOperatorManagementComponent } from './Components/Admin/admin-operator-management/admin-operator-management.component';
-import { AdminRetailerManagementComponent } from './Components/Admin/admin-retailer-management/admin-retailer-management.component';
-// tslint:disable-next-line:max-line-length
-import { AdminDistributorManagementComponent } from './Components/Admin/admin-distributor-management/admin-distributor-management.component';
-import { AdminCustomerManagementComponent } from './Components/Admin/admin-customer-management/admin-customer-management.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminOperatorManagementComponent } from './Modules/Operators/admin-operator-management/admin-operator-management.component';
+import { OperatorRegistrationComponent } from './Modules/Operators/operator-registration/operator-registration.component';
+import { OperatorViewComponent } from './Modules/Operators/operator-view/operator-view.component';
+import { OperatorDetailedViewComponent } from './Modules/Operators/operator-detailed-view/operator-detailed-view.component';
+import { OperatorUpdateComponent } from './Modules/Operators/operator-update/operator-update.component';
+import { AdminRetailerManagementComponent } from './admin-retailer-management/admin-retailer-management.component';
+import { AdminDistributorManagementComponent } from './admin-distributor-management/admin-distributor-management.component';
+import { AdminCustomerManagementComponent } from './Modules/Customers/admin-customer-management/admin-customer-management.component';
+import { OperatorsModule } from './Modules/Operators/operators.module';
+import { CustomersModule } from './Modules/Customers/customers.module';
 import { UtilityService } from './Services/Utilities/utility.service';
+import { OperatorService } from './Modules/Operators/operator.service';
+import { CustomerRegistrationComponent } from './Modules/Customers/customer-registration/customer-registration.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,9 @@ import { UtilityService } from './Services/Utilities/utility.service';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    OperatorsModule,
+    CustomersModule
   ],
   providers: [OperatorService, TestService, UtilityService],
   bootstrap: [AppComponent]

@@ -8,8 +8,8 @@ import {
 } from '@angular/router';
 import { Observable, of, EMPTY } from 'rxjs';
 import { mergeMap, take } from 'rxjs/operators';
-import { OperatorService } from '../Operator/operator.service';
-import { Operator } from 'src/app/Models/operator';
+import { OperatorService } from 'src/app/Modules/Operators/operator.service';
+import { Operator } from 'src/app/Modules/Operators/operator';
 
 @Injectable({
   providedIn: 'root'

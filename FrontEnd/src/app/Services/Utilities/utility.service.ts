@@ -1,4 +1,3 @@
-import { Operator } from './../../Models/operator';
 import { Injectable } from '@angular/core';
 import { Errors } from './../../Models/errors';
 import { Response } from '@angular/http';

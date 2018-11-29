@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { phoneNumberValidator } from 'src/app/Validators/phone-number-validator';
 import { emailValidator } from 'src/app/Validators/email-validator';
-import { OperatorService } from 'src/app/Services/Operator/operator.service';
+import { OperatorService } from 'src/app/Modules/Operators/operator.service';
 
 @Component({
   selector: 'app-retailer-registration',
