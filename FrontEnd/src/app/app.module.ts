@@ -1,5 +1,4 @@
 // tslint:disable:max-line-length
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,7 +27,6 @@ import { PackageModule } from './Modules/Packages/package.module';
 import { ChannelModule } from './Modules/Channels/channel.module';
 
 import { UtilityService } from './Services/Utilities/utility.service';
-import { CustomerRegistrationComponent } from './Modules/Customers/customer-registration/customer-registration.component';
 
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -38,7 +36,6 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    CustomerRegistrationComponent,
     HeaderComponent,
     FooterComponent,
     AdminDashboardComponent,
