@@ -1,27 +1,26 @@
 <div class="card shadow-lg p-3 mb-5 bg-white rounded">
   <nav class="navbar navbar-light" style="background-color: rgba(240, 185, 133, 0.753)">
-    <a class="navbar-brand mb-0 h1 " routerLink="/admindashboard">Welcome Administrator</a>
+    <a class="navbar-brand mb-0 h1 " href="#">Welcome Administrator</a>
     <ul class="nav nav-pills nav-fill">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/adminoperatormanagement"><img src="assets/open-iconic/svg/home.svg" alt="Home"
+        <a class="nav-link" routerLink="/adminretailermanagement"><img src="assets/open-iconic/svg/home.svg" alt="Home"
             class="homeicon" /></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/operatorregister">Register Operator</a>
+        <a class="nav-link" routerLink="/retailerregister">Register Retailer</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/operatorlist">View Operators</a>
+        <a class="nav-link" routerLink="/retailerlist">View Retailers</a>
       </li>
     </ul>
   </nav>
   <div *ngIf="!flag" class="p-3 mb-5 bg-white rounded m-5">
-    <span>The Admin can create Operators for the system, who can in turn register
+    <span>The Admin can create Retailers for the system, who can in turn register
       Customers and Retailers as well and perform various activities on their
-      behalf. Capture following details for Operator registration. Admin should
-      be able to search, update or delete created Operators</span>
+      behalf. Capture following details for Retailer registration. Admin should
+      be able to search, update or delete created Retailers</span>
   </div>
   <div class="p-3 mb-5 bg-white rounded m-5">
-    <p>admin-operator-management</p>
     <router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
   </div>
 </div>

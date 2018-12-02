@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { phoneNumberValidator } from 'src/app/Validators/phone-number-validator';
-import { emailValidator } from 'src/app/Validators/email-validator';
-
-import { shiftTimeValidator } from 'src/app/Validators/shift-time-validator';
 import { OperatorService } from '../operator.service';
 import { Operator } from '../operator';
+import { emailValidator } from '../../Shared/shared/Validators/email-validator';
+import { phoneNumberValidator } from '../../Shared/shared/Validators/phone-number-validator';
+import { shiftTimeValidator } from '../../Shared/shared/Validators/shift-time-validator';
 
 @Component({
   selector: 'app-operator-registration',

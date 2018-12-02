@@ -1,6 +1,6 @@
 <div class="card shadow-lg p-3 mb-5 bg-white rounded">
   <nav class="navbar navbar-light text-center bg-success">
-    <a class="navbar-brand mb-0 h1 mx-auto" href="#">Welcome Administrator</a>
+    <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/admindashboard">Welcome Administrator</a>
     <button class="btn btn-danger" type="button">Logout</button>
   </nav>
   <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5">
@@ -64,5 +64,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="p-3 mb-5 bg-white rounded m-5">
+    <p>admin-dashboard-component</p>
+    <router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
   </div>
 </div>

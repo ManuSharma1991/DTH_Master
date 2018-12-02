@@ -1,10 +1,10 @@
-import { pincodeValidator } from 'src/app/Validators/pincode-validator';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RetailerService } from '../../Retailers/retailer.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
-import { phoneNumberValidator } from 'src/app/Validators/phone-number-validator';
-import { emailValidator } from 'src/app/Validators/email-validator';
-import { OperatorService } from 'src/app/Modules/Operators/operator.service';
+import { Retailer } from '../retailer';
+import { emailValidator } from '../../Shared/shared/Validators/email-validator';
+import { phoneNumberValidator } from '../../Shared/shared/Validators/phone-number-validator';
+import { pincodeValidator } from '../../Shared/shared/Validators/pincode-validator';
 
 @Component({
   selector: 'app-retailer-registration',
@@ -12,7 +12,8 @@ import { OperatorService } from 'src/app/Modules/Operators/operator.service';
   styleUrls: ['./retailer-registration.component.css']
 })
 export class RetailerRegistrationComponent {
-  constructor(private operatorService: OperatorService) {}
+  retailer: Retailer;
+  constructor(private retailerService: RetailerService) {}
 
   retailerRegistrationForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
@@ -39,8 +40,18 @@ export class RetailerRegistrationComponent {
     state: new FormControl('', [Validators.required])
   });
 
-  // register() {
-  //   console.log(this.retailerRegistrationForm.value);
-  //   this.operatorService.register(this.retailerRegistrationForm.value);
-  // }
+  register() {
+    console.log(this.retailerRegistrationForm.value);
+    this.retailerService
+      .insertRetailer(this.retailerRegistrationForm.value)
+      .subscribe(data => {
+        this.retailer = data;
+      });
+    this.retailerRegistrationForm.reset();
+    this.retailerService.getAllRetailers().subscribe(() => {});
+  }
+
+  reset() {
+    this.retailerRegistrationForm.reset();
+  }
 }

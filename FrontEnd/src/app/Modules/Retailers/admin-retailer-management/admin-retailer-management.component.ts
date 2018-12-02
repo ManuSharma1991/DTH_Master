@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-retailer-management.component.css']
 })
 export class AdminRetailerManagementComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
+  flag = false;
+  ngOnInit() {}
+  onActivate(event: any) {
+    this.flag = true;
   }
 
+  onDeactivate(event: any) {
+    this.flag = false;
+  }
 }

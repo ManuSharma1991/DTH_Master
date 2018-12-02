@@ -8,7 +8,7 @@ import { OperatorService } from 'src/app/Modules/Operators/operator.service';
 @Injectable({
   providedIn: 'root'
 })
-export class Test2Service implements Resolve<Operator[]> {
+export class OperatorListService implements Resolve<Operator[]> {
   constructor(private operatorService: OperatorService) {}
   resolve(): Observable<Operator[]> | Observable<never> {
     return this.operatorService.getAllOperators().pipe(

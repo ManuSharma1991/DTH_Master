@@ -1,28 +1,12 @@
-import { TestService } from 'src/app/Services/Utilities/test.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { Ng2OrderModule } from 'ng2-order-pipe';
-import { NgxPaginationModule } from 'ngx-pagination';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { MeridianPipe } from './Validators/Pipes/meridian.pipe';
-import { RetailerRegistrationComponent } from './Components/Retailer/retailer-registration/retailer-registration.component';
-import { RetailerViewComponent } from './Components/Retailer/retailer-view/retailer-view.component';
-import { RetailerDetailedViewComponent } from './Components/Retailer/retailer-detailed-view/retailer-detailed-view.component';
 // tslint:disable-next-line:max-line-length
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminOperatorManagementComponent } from './Modules/Operators/admin-operator-management/admin-operator-management.component';
-import { OperatorRegistrationComponent } from './Modules/Operators/operator-registration/operator-registration.component';
-import { OperatorViewComponent } from './Modules/Operators/operator-view/operator-view.component';
-import { OperatorDetailedViewComponent } from './Modules/Operators/operator-detailed-view/operator-detailed-view.component';
-import { OperatorUpdateComponent } from './Modules/Operators/operator-update/operator-update.component';
-import { AdminRetailerManagementComponent } from './admin-retailer-management/admin-retailer-management.component';
 import { AdminDistributorManagementComponent } from './admin-distributor-management/admin-distributor-management.component';
 import { AdminCustomerManagementComponent } from './Modules/Customers/admin-customer-management/admin-customer-management.component';
 import { OperatorsModule } from './Modules/Operators/operators.module';
@@ -33,6 +17,9 @@ import { CustomerRegistrationComponent } from './Modules/Customers/customer-regi
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { RetailerModule } from './Modules/Retailers/retailer.module';
+import { AdminRetailerManagementComponent } from './Modules/Retailers/admin-retailer-management/admin-retailer-management.component';
+import { SharedModule } from './Modules/Shared/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -43,31 +30,20 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent,
     AdminDashboardComponent,
     AdminOperatorManagementComponent,
-    OperatorRegistrationComponent,
-    OperatorViewComponent,
-    OperatorDetailedViewComponent,
-    MeridianPipe,
-    OperatorUpdateComponent,
     AdminRetailerManagementComponent,
     AdminDistributorManagementComponent,
-    AdminCustomerManagementComponent,
-    RetailerRegistrationComponent,
-    RetailerViewComponent,
-    RetailerDetailedViewComponent
+    AdminCustomerManagementComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
     HttpClientModule,
+    AppRoutingModule,
     OperatorsModule,
     CustomersModule,
-    Ng2SearchPipeModule,
-    FormsModule,
-    Ng2OrderModule,
-    NgxPaginationModule
+    RetailerModule,
+    SharedModule
   ],
-  providers: [OperatorService, TestService, UtilityService],
+  providers: [OperatorService, UtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
-  Router,
   Resolve,
-  ActivatedRoute,
   ActivatedRouteSnapshot,
   RouterStateSnapshot
 } from '@angular/router';
@@ -14,7 +12,7 @@ import { Operator } from 'src/app/Modules/Operators/operator';
 @Injectable({
   providedIn: 'root'
 })
-export class TestService implements Resolve<Operator> {
+export class OperatorOneService implements Resolve<Operator> {
   constructor(private operatorService: OperatorService) {}
   resolve(
     route: ActivatedRouteSnapshot,

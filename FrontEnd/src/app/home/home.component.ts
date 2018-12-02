@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { passwordValidator } from 'src/app/Validators/password-validator';
 import { Router } from '@angular/router';
 import { AuthenticateService } from '../Services/Login/authenticate.service';
+import { passwordValidator } from '../Modules/Shared/shared/Validators/password-validator';
 
 @Component({
   selector: 'app-home',
