@@ -125,4 +125,8 @@ export class OperatorRegistrationComponent {
     this.operatorRegistrationForm.reset();
     this.operatorService.getAllOperators().subscribe(() => {});
   }
+
+  reset() {
+    this.operatorRegistrationForm.reset();
+  }
 }

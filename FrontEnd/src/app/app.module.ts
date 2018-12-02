@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -57,7 +61,11 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     HttpClientModule,
     OperatorsModule,
-    CustomersModule
+    CustomersModule,
+    Ng2SearchPipeModule,
+    FormsModule,
+    Ng2OrderModule,
+    NgxPaginationModule
   ],
   providers: [OperatorService, TestService, UtilityService],
   bootstrap: [AppComponent]

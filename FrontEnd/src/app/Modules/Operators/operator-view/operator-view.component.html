@@ -1,27 +1,55 @@
 <div class="card shadow-lg p-3 mb-5 bg-white rounded">
   <h5 class="card-header text-center">Operator List</h5>
   <div class="card-body">
+    <div class="input-group input-group mb-3">
+      <input class="form-control" type="text" name="search" [(ngModel)]="filter" placeholder="Enter text to search">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="submit" (click)="reset()">Reset</button>
+      </div>
+    </div>
     <table class="table" *ngIf="operatorList.length>0">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Phone Number</th>
-          <th scope="col">Action</th>
+          <th>#</th>
+          <th (click)="sort('firstname')">First Name
+            <span *ngIf="key ==='firstname'">
+              <p class="fas fa-sort"></p>
+            </span>
+          </th>
+          <th (click)="sort('lastname')">Last Name
+            <span *ngIf="key =='lastname'">
+              <p class="fas fa-sort"></p>
+            </span>
+          </th>
+          <th (click)="sort('phonenumber')">Phone Number<span *ngIf="key =='phonenumber'">
+              <p class="fas fa-sort"></p>
+            </span></th>
+          <th (click)="sort('mailid')">Mail ID<span *ngIf="key =='mailid'">
+              <p class="fas fa-sort"></p>
+            </span></th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let operator of operatorList ; index as i">
-          <th scope="row">{{ i+1 }}</th>
-          <td>{{ operator.firstname + " " + operator.lastname}}</td>
+        <tr *ngFor="let operator of operatorList | orderBy: key : reverse | filter:filter | paginate: { id: 'operatorList', itemsPerPage: 5, currentPage: p }; index as i">
+          <td>{{(itemsPerPage*(p-1))+i+1 }}</td>
+          <td>{{ operator.firstname}}</td>
+          <td>{{ operator.lastname }}</td>
           <td>{{ operator.phonenumber}}</td>
+          <td>{{ operator.emailid}}</td>
           <td><a routerLink="/operatordetailedview/{{operator.operatorID}}"><button class="btn btn-primary btn-sm">View
                 Details</button></a></td>
         </tr>
       </tbody>
     </table>
+    <div class="pull-right">
+      <pagination-controls id="operatorList" (pageChange)="p = $event" maxSize="3" directionLinks="false" autoHide="true"
+        responsive="true" previousLabel="Previous" nextLabel="Next" screenReaderPaginationLabel="Pagination"
+        screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
+      </pagination-controls>
+    </div>
     <span *ngIf="operatorList.length == 0">There are no Operators present in Database. Please Use the registration form
-      to create operators {{errormessage}}</span>
+      to create operators</span>
   </div>
 </div>
 <router-outlet></router-outlet>
