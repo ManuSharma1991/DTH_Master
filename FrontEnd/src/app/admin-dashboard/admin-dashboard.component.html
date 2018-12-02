@@ -1,72 +1,37 @@
 <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-  <nav class="navbar navbar-light text-center bg-success">
-    <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/admindashboard">Welcome Administrator</a>
+  <nav class="navbar navbar-light text-center rounded" style=" background-color: rgba(240, 185, 133, 0.753)">
+    <a class="navbar-brand mb-0 h1 mx-auto">Welcome Administrator</a>
     <button class="btn btn-danger" type="button">Logout</button>
   </nav>
-  <div class="card shadow-lg p-3 mb-5 bg-white rounded m-5">
-    <div class="row">
-      <div class="col text-center m-0.5">
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
-            <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/adminoperatormanagement">Operator Management</a>
-          </nav>
-        </div>
-      </div>
-      <div class="col text-center m-0.5">
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
-            <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/adminretailermanagement">Retailer Management</a>
-          </nav>
-        </div>
-      </div>
-      <div class="col text-center m-0.5">
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
-            <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/admindistributormanagement">Distributor Management</a>
-          </nav>
-        </div>
-      </div>
-      <div class="col text-center m-0.5">
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
-            <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/admincustomermanagement">Customer Management</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col text-center m-0.5">
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
-            <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/admindistributormanagement">Set-top Box Management</a>
-          </nav>
-        </div>
-      </div>
-      <div class="col text-center m-0.5">
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
-            <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/admincustomermanagement">Channel Management</a>
-          </nav>
-        </div>
-      </div>
-      <div class="col text-center m-0.5">
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
-            <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/admindistributormanagement">Packages Management</a>
-          </nav>
-        </div>
-      </div>
-      <div class="col text-center m-0.5">
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <nav class="navbar navbar-light text-center" style="background-color: rgba(16, 78, 211, 0.753)">
-            <a class="navbar-brand mb-0 h1 mx-auto" routerLink="/admincustomermanagement">VOD Management</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="p-3 mb-5 bg-white rounded m-5">
-    <p>admin-dashboard-component</p>
+  <nav class="navbar navbar-light rounded" style="background-color: rgba(240, 185, 133, 0.753)">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/adminoperatormanagement">Operator</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/adminretailermanagement">Retailer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admindistributormanagement">Distributor</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admincustomermanagement">Customer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/adminsettopboxmanagement">Set-top Box</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/adminchannelmanagement">Channel</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/adminpackagemanagement">Packages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/adminvideomanagement">VOD</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="card shadow-lg p-2 mb-3 bg-white rounded m-3">
     <router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
   </div>
 </div>
