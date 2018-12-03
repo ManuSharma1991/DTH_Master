@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+// @ts-nocheck
+const mongoose = require( 'mongoose' );
 
-const ChannelpackageSchema = mongoose.Schema({
+const ChannelpackageSchema = mongoose.Schema( {
     packagename: String,
     packagecategory: String,
     packagechargingtype: String,
@@ -14,6 +15,6 @@ const ChannelpackageSchema = mongoose.Schema({
     channelpackageID: String,
 }, {
     timestamps: true
-});
+} );
 
-module.exports = mongoose.model('Channelpackage', ChannelpackageSchema);
+module.exports = mongoose.model( 'Channelpackage', ChannelpackageSchema );

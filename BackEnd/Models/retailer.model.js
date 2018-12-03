@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+// @ts-nocheck
+const mongoose = require( 'mongoose' );
 
-const RetailerSchema = mongoose.Schema({
+const RetailerSchema = mongoose.Schema( {
     name: String,
 
     phonenumber1: Number,
@@ -23,6 +24,6 @@ const RetailerSchema = mongoose.Schema({
     password: String
 }, {
     timestamps: true
-});
+} );
 
-module.exports = mongoose.model('Retailer', RetailerSchema);
+module.exports = mongoose.model( 'Retailer', RetailerSchema );

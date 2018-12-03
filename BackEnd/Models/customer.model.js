@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+// @ts-nocheck
+const mongoose = require( 'mongoose' );
 
-const CustomerSchema = mongoose.Schema({
+const CustomerSchema = mongoose.Schema( {
     firstname: String,
     lastname: String,
 
@@ -21,6 +22,6 @@ const CustomerSchema = mongoose.Schema({
     password: String
 }, {
     timestamps: true
-});
+} );
 
-module.exports = mongoose.model('Customer', CustomerSchema);
+module.exports = mongoose.model( 'Customer', CustomerSchema );

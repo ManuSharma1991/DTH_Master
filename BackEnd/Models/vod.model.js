@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+// @ts-nocheck
+const mongoose = require( 'mongoose' );
 
-const VODSchema = mongoose.Schema({
+const VODSchema = mongoose.Schema( {
     videoname: String,
     videocategory: String,
     videoduration: Number,
@@ -12,6 +13,6 @@ const VODSchema = mongoose.Schema({
     vodID: String,
 }, {
     timestamps: true
-});
+} );
 
-module.exports = mongoose.model('VOD', VODSchema);
+module.exports = mongoose.model( 'VOD', VODSchema );

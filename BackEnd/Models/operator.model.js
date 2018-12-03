@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+// @ts-nocheck
+const mongoose = require( 'mongoose' );
 
-const OperatorSchema = mongoose.Schema({
+const OperatorSchema = mongoose.Schema( {
     firstname: String,
     lastname: String,
 
@@ -20,6 +21,6 @@ const OperatorSchema = mongoose.Schema({
     password: String
 }, {
     timestamps: true
-});
+} );
 
-module.exports = mongoose.model('Operator', OperatorSchema);
+module.exports = mongoose.model( 'Operator', OperatorSchema );

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Errors } from './../../Models/errors';
+import { Errors } from '../../Modules/Shared/shared/errors';
 import { Response } from '@angular/http';
 import { Observable } from 'rxjs';
 

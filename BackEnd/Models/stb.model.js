@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+// @ts-nocheck
+const mongoose = require( 'mongoose' );
 
-const STBSchema = mongoose.Schema({
+const STBSchema = mongoose.Schema( {
     settopboxtype: String,
     settopboxfeatures: String,
 
@@ -19,6 +20,6 @@ const STBSchema = mongoose.Schema({
 
 }, {
     timestamps: true
-});
+} );
 
-module.exports = mongoose.model('STB', STBSchema);
+module.exports = mongoose.model( 'STB', STBSchema );

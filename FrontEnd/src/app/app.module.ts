@@ -51,7 +51,6 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     OperatorsModule,
     CustomersModule,
     RetailerModule,
@@ -60,7 +59,8 @@ import { FooterComponent } from './footer/footer.component';
     ChannelModule,
     PackageModule,
     VideoModule,
-    SettopboxModule
+    SettopboxModule,
+    AppRoutingModule
   ],
   providers: [UtilityService],
   bootstrap: [AppComponent]

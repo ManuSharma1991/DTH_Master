@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+// @ts-nocheck
+const mongoose = require( 'mongoose' );
 
-const ChannelSchema = mongoose.Schema({
+const ChannelSchema = mongoose.Schema( {
     channelname: String,
     channelband: String,
     videocarrierfrequency: Number,
@@ -12,6 +13,6 @@ const ChannelSchema = mongoose.Schema({
     channelID: String
 }, {
     timestamps: true
-});
+} );
 
-module.exports = mongoose.model('Channel', ChannelSchema);
+module.exports = mongoose.model( 'Channel', ChannelSchema );

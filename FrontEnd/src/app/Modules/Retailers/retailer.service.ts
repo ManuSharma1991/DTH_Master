@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UtilityService } from 'src/app/Services/Utilities/utility.service';
-import { Constants } from 'src/app/Models/constants';
+import { Constants } from 'src/app/Modules/Shared/shared/constants';
 import { Observable } from 'rxjs';
 import { Retailer } from './retailer';
 import { map, catchError } from 'rxjs/operators';

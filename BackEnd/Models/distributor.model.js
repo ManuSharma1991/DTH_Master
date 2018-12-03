@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+// @ts-nocheck
+const mongoose = require( 'mongoose' );
 
-const DistributorSchema = mongoose.Schema({
+const DistributorSchema = mongoose.Schema( {
     name: String,
 
     phonenumber1: Number,
@@ -21,6 +22,6 @@ const DistributorSchema = mongoose.Schema({
     password: String
 }, {
     timestamps: true
-});
+} );
 
-module.exports = mongoose.model('Distributor', DistributorSchema);
+module.exports = mongoose.model( 'Distributor', DistributorSchema );

@@ -12,10 +12,7 @@
   </ul>
 </nav>
 <div *ngIf="!flag" class="p-3 mb-5 bg-white rounded m-5">
-  <span>The Admin can create Retailers for the system, who can in turn register
-    Customers and Retailers as well and perform various activities on their
-    behalf. Capture following details for Retailer registration. Admin should
-    be able to search, update or delete created Retailers</span>
+  <h1 style="text-align: center">RETAILER</h1>
 </div>
 <div class="p-3 mb-5 bg-white rounded m-5">
   <router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>

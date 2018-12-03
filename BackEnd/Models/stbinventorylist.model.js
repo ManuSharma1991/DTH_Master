@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+// @ts-nocheck
+const mongoose = require( 'mongoose' );
 
-const STBInventoryListSchema = mongoose.Schema({
+const STBInventoryListSchema = mongoose.Schema( {
     settopboxtype: String,
     serialnumber: Number,
     macid: String,
@@ -10,6 +11,6 @@ const STBInventoryListSchema = mongoose.Schema({
 
 }, {
     timestamps: true
-});
+} );
 
-module.exports = mongoose.model('STBInventoryList', STBInventoryListSchema);
+module.exports = mongoose.model( 'STBInventoryList', STBInventoryListSchema );

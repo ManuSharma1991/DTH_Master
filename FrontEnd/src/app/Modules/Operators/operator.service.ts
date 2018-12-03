@@ -3,7 +3,7 @@ import { Operator } from './operator';
 import { Injectable } from '@angular/core';
 import { map, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Constants } from 'src/app/Models/constants';
+import { Constants } from 'src/app/Modules/Shared/shared/constants';
 import { UtilityService } from 'src/app/Services/Utilities/utility.service';
 
 @Injectable({
