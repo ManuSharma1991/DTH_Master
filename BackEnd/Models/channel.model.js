@@ -2,6 +2,7 @@
 const mongoose = require( 'mongoose' );
 
 const ChannelSchema = mongoose.Schema( {
+    channelnumber: Number,
     channelname: String,
     channelband: String,
     videocarrierfrequency: Number,
@@ -9,8 +10,8 @@ const ChannelSchema = mongoose.Schema( {
     channelchargetype: String,
     channeltransmissiontype: String,
     channelcharge: Number,
-
-    channelID: String
+    channelcategory: String,
+    assetlocation: String,
 }, {
     timestamps: true
 } );

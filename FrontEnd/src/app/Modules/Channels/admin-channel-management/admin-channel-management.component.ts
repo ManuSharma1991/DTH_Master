@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-channel-management.component.css']
 })
 export class AdminChannelManagementComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {}
+  flag = false;
+  ngOnInit() {}
+  onActivate(event: any) {
+    this.flag = true;
   }
 
+  onDeactivate(event: any) {
+    this.flag = false;
+  }
 }
