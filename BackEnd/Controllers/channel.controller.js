@@ -82,7 +82,7 @@ exports.update = ( req, res ) => {
 
     // Find channel and update it with the request body
     Channel.findOneAndUpdate( {
-            channelnumber: req.params.channelnumber
+            channelnumber: req.body.channelnumber
         }, {
             channelname: req.body.channelname,
             channelband: req.body.channelband,
@@ -99,14 +99,14 @@ exports.update = ( req, res ) => {
         .then( channel => {
             if ( !channel ) {
                 return res.status( 404 ).send( {
-                    message: "Channel not found with id " + req.params.channelnumber
+                    message: "Channel not found with -------- id " + req.params.channelnumber
                 } );
             }
             res.send( channel );
         } ).catch( err => {
             if ( err.kind === 'ObjectId' ) {
                 return res.status( 404 ).send( {
-                    message: "Channel not found with id " + req.params.channelnumber
+                    message: "Channel not found with --++++------ id " + req.params.channelnumber
                 } );
             }
             return res.status( 500 ).send( {

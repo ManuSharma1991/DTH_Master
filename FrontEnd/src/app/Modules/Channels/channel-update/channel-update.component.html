@@ -1,3 +1,150 @@
-<p>
-  channel-update works!
-</p>
+<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+  <h5 class="card-header text-center">Channel Updation Form</h5>
+  <div class="card-body">
+    <form [formGroup]=" channelUpdationForm" class="form-group">
+
+      <!-- ============================================================================================================ -->
+
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 200px" class="input-group-text">CHANNEL NUMBER</span>
+        </div>
+        <input class="form-control" type="text" formControlName="channelnumber" required>
+        <div class="input-group-append" *ngIf="(this. channelUpdationForm.get('channelnumber').dirty || this. channelUpdationForm.get('channelnumber').touched ) && this. channelUpdationForm.get('channelnumber').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter channelnumber</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 200px" class="input-group-text">CHANNEL NAME</span>
+        </div>
+        <input class="form-control" type="text" formControlName="channelname" required>
+        <div class="input-group-append" *ngIf="(this. channelUpdationForm.get('channelname').dirty || this. channelUpdationForm.get('channelname').touched ) && this. channelUpdationForm.get('channelname').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter channelname</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 200px" class="input-group-text">AC FREQUENCY</span>
+        </div>
+        <input class="form-control" type="text" formControlName="audiocarrierfrequency" required>
+        <div class="input-group-append" *ngIf="(this. channelUpdationForm.get('audiocarrierfrequency').dirty || this. channelUpdationForm.get('audiocarrierfrequency').touched ) && this. channelUpdationForm.get('audiocarrierfrequency').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter AC frequency(MHz)</span>
+        </div>
+        <div class="input-group-append" *ngIf="!this. channelUpdationForm.get('audiocarrierfrequency').hasError('required') && this. channelUpdationForm.get('audiocarrierfrequency').hasError('invalidEmailID')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter Valid Email-ID</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 200px" class="input-group-text">VC FREQUENCY</span>
+        </div>
+        <input class="form-control" type="text" formControlName="videocarrierfrequency" required>
+        <div class="input-group-append" *ngIf="(this. channelUpdationForm.get('videocarrierfrequency').dirty || this. channelUpdationForm.get('videocarrierfrequency').touched ) && this. channelUpdationForm.get('videocarrierfrequency').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter VC Frequency(MHz)</span>
+        </div>
+        <div class="input-group-append" *ngIf="!this. channelUpdationForm.get('videocarrierfrequency').hasError('required') && this. channelUpdationForm.get('videocarrierfrequency').hasError('invalidPhoneNumber')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Mobile Number</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 200px" class="input-group-text">CHANNEL CATEGORY</span>
+        </div>
+        <input class="form-control" type="text" formControlName="channelcategory" required>
+        <!-- <div class="input-group-append">
+          <select style="width: 100px" class="input-group-text" formControlName="startmeridian">
+            <option value=0>A.M.</option>
+            <option value=12>P.M.</option>
+          </select>
+        </div> -->
+        <div class="input-group-append" *ngIf="(this. channelUpdationForm.get('channelcategory').dirty || this. channelUpdationForm.get('channelcategory').touched ) && this. channelUpdationForm.get('channelcategory').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter Channel Category</span>
+        </div>
+        <div class="input-group-append" *ngIf="!this. channelUpdationForm.get('channelcategory').hasError('required') && this. channelUpdationForm.get('channelcategory').hasError('invalidShiftTime')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Shift Time</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 200px" class="input-group-text">TRANSMISSION TYPE</span>
+        </div>
+        <input class="form-control" type="text" formControlName="channeltransmissiontype">
+        <!-- <div class="input-group-append">
+          <select style="width: 100px" class="input-group-text" formControlName="endmeridian" readonly>
+            <option value="0">A.M.</option>
+            <option value="12">P.M.</option>
+          </select>
+        </div> -->
+        <div class="input-group-append" *ngIf="(this. channelUpdationForm.get('channeltransmissiontype').dirty || this. channelUpdationForm.get('channeltransmissiontype').touched ) && this. channelUpdationForm.get('channeltransmissiontype').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter Transmission Type</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 200px" class="input-group-text">CHANNEL BAND</span>
+        </div>
+        <input class="form-control" type="text" formControlName="channelband">
+        <!-- <div class="input-group-append">
+          <select style="width: 100px" class="input-group-text" formControlName="channelband" readonly>
+            <option value="0">A.M.</option>
+            <option value="12">P.M.</option>
+          </select>
+        </div> -->
+        <div class="input-group-append" *ngIf="(this. channelUpdationForm.get('channelband').dirty || this. channelUpdationForm.get('channelband').touched ) && this. channelUpdationForm.get('channelband').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter Channel band</span>
+        </div>
+      </div>
+
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 200px" class="input-group-text">CHANNEL CHARGE TYPE</span>
+        </div>
+        <input class="form-control" type="text" formControlName="channelchargetype" required>
+        <div class="input-group-append" *ngIf="(this. channelUpdationForm.get('channelchargetype').dirty || this. channelUpdationForm.get('channelchargetype').touched ) && this. channelUpdationForm.get('channelchargetype').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter Channel Charge Type</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span style="width: 200px" class="input-group-text">CHANNEL CHARGE</span>
+        </div>
+        <input class="form-control" type="text" formControlName="channelcharge" required>
+        <div class="input-group-append" *ngIf="(this. channelUpdationForm.get('channelcharge').dirty || this. channelUpdationForm.get('channelcharge').touched ) && this. channelUpdationForm.get('channelcharge').hasError('required')">
+          <span style="width: 225px" class="input-group-text alert-danger">Please Enter Channel Charge</span>
+        </div>
+      </div>
+
+      <!-- ============================================================================================================ -->
+
+      <div class="text-center">
+        <button class="btn btn-outline-primary" type="submit" (click)="updatechannel(channel)">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -104,7 +104,7 @@ export class Constants {
     return '/registerchannel';
   }
   public static get UPDATE_CHANNEL_URL(): string {
-    return '/updatechannel/';
+    return '/updatechannel';
   }
   public static get DELETE_CHANNEL_URL(): string {
     return '/deletechannel/';

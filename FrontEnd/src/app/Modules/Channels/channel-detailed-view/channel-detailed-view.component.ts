@@ -9,7 +9,6 @@ import { Channel } from '../channel';
   styleUrls: ['./channel-detailed-view.component.css']
 })
 export class ChannelDetailedViewComponent implements OnInit {
-
   channel: Channel;
   flag = true;
   errmessage: string;
@@ -18,7 +17,7 @@ export class ChannelDetailedViewComponent implements OnInit {
     private channelSerice: ChannelService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -27,15 +26,9 @@ export class ChannelDetailedViewComponent implements OnInit {
     });
   }
 
-  update(channel: Channel) {
-    this.flag = false;
-    this.channelSerice.updateChannel(channel);
-  }
-
   delete(ChannelID: String) {
     return this.channelSerice.deleteChannel(ChannelID).subscribe(data => {
       this.router.navigateByUrl('/adminchannelmanagement');
     });
   }
-
 }
