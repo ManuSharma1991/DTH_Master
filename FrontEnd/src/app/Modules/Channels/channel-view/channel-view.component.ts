@@ -9,19 +9,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ChannelViewComponent implements OnInit {
   channelList: Channel[];
+  shortArrays = [];
+
   constructor(private route: ActivatedRoute) {}
-  filter;
-  key = 'firstname';
-  reverse = false;
-  p = 1;
-  itemsPerPage = 5;
-  sort(key) {
-    this.key = key;
-    this.reverse = !this.reverse;
-  }
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.channelList = data.Channel;
     });
+
+    let i;
+    let len;
+    for (i = 0, len = this.channelList.length; i < len; i = i + 37) {
+      this.shortArrays.push(this.channelList.slice(i, i + 37));
+    }
   }
 }

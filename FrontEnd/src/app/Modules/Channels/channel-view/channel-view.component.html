@@ -1,13 +1,17 @@
 <div class="card shadow-lg p-2 mb-3 bg-white rounded">
-  <h5 class="card-header text-center">Operator List</h5>
+  <h5 class="card-header text-center">Channel List</h5>
   <div class="card-body">
-    <table>
-      <tr *ngFor="let channel of channelList; index as i">
-        <td>
-          <img src="{{channel.assetlocation}}" alt="{{channel.assetlocation}}">
-        </td>
-      </tr>
-    </table>
+    <div class="row">
+      <div class="col-1" *ngFor="let channelList of shortArrays">
+        <table class="table">
+          <tr *ngFor="let channel of channelList; index as i">
+            <td>
+              <img src="{{channel.assetlocation}}" alt="{{channel.assetlocation}}">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
     <span *ngIf="channelList.length == 0">There are no Operators present in Database. Please Use the registration
       form to create operators</span>
   </div>
