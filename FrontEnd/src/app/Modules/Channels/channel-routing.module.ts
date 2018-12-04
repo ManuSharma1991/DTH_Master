@@ -6,6 +6,7 @@ import { ChannelViewComponent } from './channel-view/channel-view.component';
 import { ChannelListService } from './Resolvers/channel-list.service';
 import { ChannelDetailedViewComponent } from './channel-detailed-view/channel-detailed-view.component';
 import { ChannelOneService } from './Resolvers/channel-one.service';
+import { ChannelCategoryListService } from './Resolvers/channel-category-list.service';
 
 const channelRoutes: Routes = [
   {
@@ -19,20 +20,20 @@ const channelRoutes: Routes = [
       {
         path: 'channellist',
         component: ChannelViewComponent,
-        resolve: { Channel: ChannelListService }
+        resolve: { Channel: ChannelListService, ChannelCategory: ChannelCategoryListService }
       },
       {
-        path: 'channeldetailedview/:channelID',
+        path: 'channeldetailedview/:channelnumber',
         component: ChannelDetailedViewComponent,
         resolve: { Channel: ChannelOneService }
       },
       {
-        path: 'channelupdate/:channelID',
+        path: 'channelupdate/:channelnumber',
         component: ChannelDetailedViewComponent,
         resolve: { Channel: ChannelOneService }
       },
       {
-        path: 'channeldelete/:channelID',
+        path: 'channeldelete/:channelnumber',
         component: ChannelDetailedViewComponent,
         resolve: { Channel: ChannelOneService }
       }
@@ -44,4 +45,4 @@ const channelRoutes: Routes = [
   imports: [RouterModule.forChild(channelRoutes)],
   exports: [RouterModule]
 })
-export class ChannelRoutingModule {}
+export class ChannelRoutingModule { }

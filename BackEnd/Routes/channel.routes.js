@@ -6,13 +6,14 @@ module.exports = (app) => {
 
     // Retrieve all channels
     app.get('/channels/viewallchannels', channels.findAll);
+    app.get('/channels/viewallchannelcategories', channels.findNames);
 
     // Retrieve a single channel with channelId
-    app.get('/channels/getchannelbyid/:channelId', channels.findOne);
+    app.get('/channels/getchannelbyid/:channelnumber', channels.findOne);
 
     // Update a channel with channelId
-    app.put('/channels/updatechannel/:channelId', channels.update);
+    app.put('/channels/updatechannel/:channelnumber', channels.update);
 
     // Delete a channel with channelId
-    app.delete('/channels/deletechannel/:channelId', channels.delete);
+    app.delete('/channels/deletechannel/:channelnumber', channels.delete);
 }

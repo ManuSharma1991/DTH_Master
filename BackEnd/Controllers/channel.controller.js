@@ -40,19 +40,29 @@ exports.findAll = ( req, res ) => {
         } );
 };
 
+exports.findNames = ( req, res ) => {
+    Channel.find().distinct( "channelcategory" ).then( channelcategories => {
+        res.send( channelcategories );
+    } ).catch( err => {
+        res.status( 500 ).send( {
+            message: err.message || "Some error occurred."
+        } )
+    } )
+}
+
 // Find a single channel with a channelId
 exports.findOne = ( req, res ) => {
     console.log( 'line 51 ' + req.params.channelnumber )
-
+    console.log( '56 +' + req.params.channelnumber );
     Channel.findOne( {
             channelnumber: req.params.channelnumber
         } )
         .then( channel => {
-            if ( !channel ) {
-                return res.status( 404 ).send( {
-                    message: "Channel not found with id" + req.params.channelnumber
-                } );
-            }
+            // if ( !channel ) {
+            //     return res.status( 404 ).send( {
+            //         message: "Channel not found with --------------------- id" + req.params.channelnumber
+            //     } );
+            // }
             res.send( channel );
         } ).catch( err => {
             console.log( err );

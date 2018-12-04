@@ -24,6 +24,14 @@ export class ChannelService {
     );
   }
 
+  getChannelCategories(): Observable<String[]> {
+    return this._http
+      .get(this.baseURL + Constants.GET_CHANNELCATEGORIES_URL)
+      .pipe(
+        map(response => this._utilityService.handleResult(response)),
+        catchError(error => this._utilityService.handleError(error))
+      );
+  }
   insertChannel(channel: Channel): Observable<Channel> {
     return this._http
       .post(this.baseURL + Constants.POST_CHANNEL_URL, channel)
@@ -35,7 +43,7 @@ export class ChannelService {
       );
   }
 
-  getChannelById(channelId: String): Observable<Channel> {
+  getChannelById(channelId: number): Observable<Channel> {
     return this._http
       .get(this.baseURL + Constants.GETONE_CHANNEL_URL + channelId)
       .pipe(

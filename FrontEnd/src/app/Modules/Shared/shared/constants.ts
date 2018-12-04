@@ -97,6 +97,9 @@ export class Constants {
   public static get GET_CHANNEL_URL(): string {
     return '/viewallchannels';
   }
+  public static get GET_CHANNELCATEGORIES_URL(): string {
+    return '/viewallchannelcategories';
+  }
   public static get POST_CHANNEL_URL(): string {
     return '/registerchannel';
   }

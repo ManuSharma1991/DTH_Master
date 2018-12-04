@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ChannelService } from '../channel.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Channel } from '../channel';
 
 @Component({
   selector: 'app-channel-detailed-view',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChannelDetailedViewComponent implements OnInit {
 
-  constructor() { }
+  channel: Channel;
+  flag = true;
+  errmessage: string;
+
+  constructor(
+    private channelSerice: ChannelService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => {
+      console.log(data);
+      this.channel = data.Channel;
+    });
+  }
+
+  update(channel: Channel) {
+    this.flag = false;
+    this.channelSerice.updateChannel(channel);
+  }
+
+  delete(ChannelID: String) {
+    return this.channelSerice.deleteChannel(ChannelID).subscribe(data => {
+      this.router.navigateByUrl('/adminchannelmanagement');
+    });
   }
 
 }
