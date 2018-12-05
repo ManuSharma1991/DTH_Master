@@ -27,15 +27,16 @@
             ],
             "scripts": [
               "../FrontEnd/node_modules/jquery/dist/jquery.min.js",
-              "../FrontEnd/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "../FrontEnd/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "../FrontEnd/node_modules/font-awesome/all.js"
             ]
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
+              "fileReplacements": [ {
                 "replace": "src/environments/environment.ts",
                 "with": "src/environments/environment.prod.ts"
-              }],
+              } ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,

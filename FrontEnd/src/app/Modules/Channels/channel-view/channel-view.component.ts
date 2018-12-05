@@ -9,10 +9,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ChannelViewComponent implements OnInit {
   channelList: Channel[];
-  shortArrays = [];
+  categorisedChannels = [];
   categoryList: String[];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.channelList = data.Channel;
@@ -20,17 +20,17 @@ export class ChannelViewComponent implements OnInit {
       console.log(this.channelList);
       console.log(this.categoryList);
     });
-
-    let i;
-    let len;
-    let j;
-    let len2;
-    for (i = 0, len = this.channelList.length; i < len; i++) {
-      for (j = 0, len2 = this.categoryList.length; j < len2; j++) {
-        if (this.channelList[i].channelcategory === this.categoryList[j]) {
-          this.shortArrays.push(this.channelList[i]);
-        }
+  }
+  getChannels(category: String): Channel[] {
+    this.categorisedChannels = [];
+    console.log(category);
+    for (let i = 0; i < this.channelList.length; i++) {
+      console.log(this.channelList[i].channelcategory === category);
+      console.log(category);
+      if (this.channelList[i].channelcategory === category) {
+        this.categorisedChannels.push(this.channelList[i]);
       }
     }
+    return this.categorisedChannels;
   }
 }
