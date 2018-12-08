@@ -4,141 +4,156 @@
     <form [formGroup]="retailerRegistrationForm" class="form-group">
 
       <!-- ============================================================================================================ -->
-
-
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span style="width: 135px" class="input-group-text">NAME</span>
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">NAME</span>
+            </div>
+            <input class="form-control" type="text" formControlName="name" required>
+            <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('name').dirty || this.retailerRegistrationForm.get('name').touched ) && this.retailerRegistrationForm.get('name').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter name</span>
+            </div>
+          </div>
         </div>
-        <input class="form-control" type="text" formControlName="name" required>
-        <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('name').dirty || this.retailerRegistrationForm.get('name').touched ) && this.retailerRegistrationForm.get('name').hasError('required')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter name</span>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">EMAIL ID</span>
+            </div>
+            <input class="form-control" type="text" formControlName="emailid" required>
+            <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('emailid').dirty || this.retailerRegistrationForm.get('emailid').touched ) && this.retailerRegistrationForm.get('emailid').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter emailid</span>
+            </div>
+            <div class="input-group-append" *ngIf="!this.retailerRegistrationForm.get('emailid').hasError('required') && this.retailerRegistrationForm.get('emailid').hasError('invalidEmailID')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Valid Email-ID</span>
+            </div>
+          </div>
         </div>
       </div>
-
       <!-- ============================================================================================================ -->
-
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span style="width: 135px" class="input-group-text">EMAIL ID</span>
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">PHONE NUMBER 1</span>
+            </div>
+            <input class="form-control" type="text" formControlName="phonenumber1" required>
+            <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('phonenumber1').dirty || this.retailerRegistrationForm.get('phonenumber1').touched ) && this.retailerRegistrationForm.get('phonenumber1').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter phonenumber</span>
+            </div>
+            <div class="input-group-append" *ngIf="!this.retailerRegistrationForm.get('phonenumber1').hasError('required') && this.retailerRegistrationForm.get('phonenumber1').hasError('invalidPhoneNumber')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Mobile Number</span>
+            </div>
+          </div>
         </div>
-        <input class="form-control" type="text" formControlName="emailid" required>
-        <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('emailid').dirty || this.retailerRegistrationForm.get('emailid').touched ) && this.retailerRegistrationForm.get('emailid').hasError('required')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter emailid</span>
-        </div>
-        <div class="input-group-append" *ngIf="!this.retailerRegistrationForm.get('emailid').hasError('required') && this.retailerRegistrationForm.get('emailid').hasError('invalidEmailID')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter Valid Email-ID</span>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">PHONE NUMBER 2</span>
+            </div>
+            <input class="form-control" type="text" formControlName="phonenumber2" required>
+            <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('phonenumber2').dirty || this.retailerRegistrationForm.get('phonenumber2').touched ) && this.retailerRegistrationForm.get('phonenumber2').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter phonenumber</span>
+            </div>
+            <div class="input-group-append" *ngIf="!this.retailerRegistrationForm.get('phonenumber2').hasError('required') && this.retailerRegistrationForm.get('phonenumber2').hasError('invalidPhoneNumber')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Mobile Number</span>
+            </div>
+          </div>
         </div>
       </div>
-
       <!-- ============================================================================================================ -->
-
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span style="width: 135px" class="input-group-text">PHONE NUMBER 1</span>
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">ADDRESS LINE 1</span>
+            </div>
+            <input class="form-control" type="text" formControlName="addressline1" required>
+            <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('addressline1').dirty || this.retailerRegistrationForm.get('addressline1').touched ) && this.retailerRegistrationForm.get('addressline1').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter addressline1</span>
+            </div>
+          </div>
         </div>
-        <input class="form-control" type="text" formControlName="phonenumber1" required>
-        <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('phonenumber1').dirty || this.retailerRegistrationForm.get('phonenumber1').touched ) && this.retailerRegistrationForm.get('phonenumber1').hasError('required')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter phonenumber</span>
-        </div>
-        <div class="input-group-append" *ngIf="!this.retailerRegistrationForm.get('phonenumber1').hasError('required') && this.retailerRegistrationForm.get('phonenumber1').hasError('invalidPhoneNumber')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Mobile Number</span>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">ADDRESS LINE 2</span>
+            </div>
+            <input class="form-control" type="text" formControlName="addressline2">
+          </div>
         </div>
       </div>
-
       <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">LANDMARK</span>
+            </div>
+            <input class="form-control" type="text" formControlName="landmark" required>
+            <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('landmark').dirty || this.retailerRegistrationForm.get('landmark').touched ) && this.retailerRegistrationForm.get('landmark').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter landmark</span>
+            </div>
+          </div>
 
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span style="width: 135px" class="input-group-text">PHONE NUMBER 2</span>
         </div>
-        <input class="form-control" type="text" formControlName="phonenumber2" required>
-        <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('phonenumber2').dirty || this.retailerRegistrationForm.get('phonenumber2').touched ) && this.retailerRegistrationForm.get('phonenumber2').hasError('required')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter phonenumber</span>
-        </div>
-        <div class="input-group-append" *ngIf="!this.retailerRegistrationForm.get('phonenumber2').hasError('required') && this.retailerRegistrationForm.get('phonenumber2').hasError('invalidPhoneNumber')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Mobile Number</span>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">PINCODE</span>
+            </div>
+            <input class="form-control" type="text" formControlName="pincode" required>
+            <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('pincode').dirty || this.retailerRegistrationForm.get('pincode').touched ) && this.retailerRegistrationForm.get('pincode').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter pincode</span>
+            </div>
+            <div class="input-group-append" *ngIf="!this.retailerRegistrationForm.get('pincode').hasError('required') && this.retailerRegistrationForm.get('pincode').hasError('invalidPincode')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Pincode</span>
+            </div>
+          </div>
         </div>
       </div>
-
       <!-- ============================================================================================================ -->
-
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span style="width: 135px" class="input-group-text">ADDRESS LINE 1</span>
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">CITY</span>
+            </div>
+            <input class="form-control" type="text" formControlName="city" required>
+            <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('city').dirty || this.retailerRegistrationForm.get('city').touched ) && this.retailerRegistrationForm.get('city').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter city</span>
+            </div>
+          </div>
         </div>
-        <input class="form-control" type="text" formControlName="addressline1" required>
-        <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('addressline1').dirty || this.retailerRegistrationForm.get('addressline1').touched ) && this.retailerRegistrationForm.get('addressline1').hasError('required')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter addressline1</span>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">STATE</span>
+            </div>
+            <input class="form-control" type="text" formControlName="state" required>
+            <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('state').dirty || this.retailerRegistrationForm.get('state').touched ) && this.retailerRegistrationForm.get('state').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter state</span>
+            </div>
+          </div>
         </div>
       </div>
-
       <!-- ============================================================================================================ -->
-
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span style="width: 135px" class="input-group-text">ADDRESS LINE 2</span>
+      <div class="row">
+        <div class="col text-right">
+          <button class="btn btn-outline-primary" type="submit" [disabled]="!this.retailerRegistrationForm.valid"
+            (click)="register()">Register</button>
         </div>
-        <input class="form-control" type="text" formControlName="addressline2">
-      </div>
-
-      <!-- ============================================================================================================ -->
-
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span style="width: 135px" class="input-group-text">LANDMARK</span>
-        </div>
-        <input class="form-control" type="text" formControlName="landmark" required>
-        <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('landmark').dirty || this.retailerRegistrationForm.get('landmark').touched ) && this.retailerRegistrationForm.get('landmark').hasError('required')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter landmark</span>
+        <div class="col text-left">
+          <button class="btn btn-outline-primary" type="submit" (click)="reset()">Reset</button>
         </div>
       </div>
 
-      <!-- ============================================================================================================ -->
-
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span style="width: 135px" class="input-group-text">PINCODE</span>
-        </div>
-        <input class="form-control" type="text" formControlName="pincode" required>
-        <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('pincode').dirty || this.retailerRegistrationForm.get('pincode').touched ) && this.retailerRegistrationForm.get('pincode').hasError('required')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter pincode</span>
-        </div>
-        <div class="input-group-append" *ngIf="!this.retailerRegistrationForm.get('pincode').hasError('required') && this.retailerRegistrationForm.get('pincode').hasError('invalidPincode')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter valid Pincode</span>
-        </div>
-      </div>
-
-      <!-- ============================================================================================================ -->
-
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span style="width: 135px" class="input-group-text">CITY</span>
-        </div>
-        <input class="form-control" type="text" formControlName="city" required>
-        <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('city').dirty || this.retailerRegistrationForm.get('city').touched ) && this.retailerRegistrationForm.get('city').hasError('required')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter city</span>
-        </div>
-      </div>
-
-      <!-- ============================================================================================================ -->
-
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span style="width: 135px" class="input-group-text">STATE</span>
-        </div>
-        <input class="form-control" type="text" formControlName="state" required>
-        <div class="input-group-append" *ngIf="(this.retailerRegistrationForm.get('state').dirty || this.retailerRegistrationForm.get('state').touched ) && this.retailerRegistrationForm.get('state').hasError('required')">
-          <span style="width: 225px" class="input-group-text alert-danger">Please Enter state</span>
-        </div>
-      </div>
-
-
-      <!-- ============================================================================================================ -->
-
-      <div class="text-center">
-        <button class="btn btn-outline-primary" type="submit" [disabled]="!this.retailerRegistrationForm.valid" (click)="register()">Register</button>
-      </div>
     </form>
   </div>
 </div>

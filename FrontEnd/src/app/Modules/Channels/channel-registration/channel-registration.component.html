@@ -1,3 +1,152 @@
-<p>
-  channel-registration works!
-</p>
+<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+  <h5 class="card-header text-center">Channel Registration Form</h5>
+  <div class="card-body">
+    <form [formGroup]=" channelRegistrationForm" class="form-group">
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">CHANNEL NAME</span>
+            </div>
+            <input class="form-control" type="text" formControlName="channelname" required>
+            <div class="input-group-append" *ngIf="(this. channelRegistrationForm.get('channelname').dirty || this. channelRegistrationForm.get('channelname').touched ) && this. channelRegistrationForm.get('channelname').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Channel Name</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">CHANNEL BAND</span>
+            </div>
+            <select class="form-control" type="text" formControlName="channelband" required>
+              <option value="I">Band I</option>
+              <option value="II">Band II</option>
+              <option value="III">Band III</option>
+            </select>
+            <div class="input-group-append" *ngIf="(this. channelRegistrationForm.get('channelband').dirty || this. channelRegistrationForm.get('channelband').touched ) && this. channelRegistrationForm.get('channelband').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Channel Band</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">VC FREQUENCY</span>
+            </div>
+            <input class="form-control" type="text" formControlName="videocarrierfrequency" required>
+            <div class="input-group-append">
+              <span style="width: 50px" class="input-group-text">MHz</span>
+            </div>
+            <div class="input-group-append" *ngIf="(this. channelRegistrationForm.get('videocarrierfrequency').dirty || this. channelRegistrationForm.get('videocarrierfrequency').touched ) && this. channelRegistrationForm.get('videocarrierfrequency').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter VC Frequency</span>
+            </div>
+            <div class="input-group-append" *ngIf="!this. channelRegistrationForm.get('videocarrierfrequency').hasError('required') && this. channelRegistrationForm.get('videocarrierfrequency').hasError('min')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter frequency above 40</span>
+            </div>
+            <div class="input-group-append" *ngIf="!this. channelRegistrationForm.get('videocarrierfrequency').hasError('required') && this. channelRegistrationForm.get('videocarrierfrequency').hasError('max')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter frequency below 225</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">AC FREQUENCY</span>
+            </div>
+            <input class="form-control" type="text" formControlName="audiocarrierfrequency" required>
+            <div class="input-group-append">
+              <span style="width: 50px" class="input-group-text">MHz</span>
+            </div>
+            <div class="input-group-append" *ngIf="(this. channelRegistrationForm.get('audiocarrierfrequency').dirty || this. channelRegistrationForm.get('audiocarrierfrequency').touched ) && this. channelRegistrationForm.get('audiocarrierfrequency').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter AC Frequency</span>
+            </div>
+            <div class="input-group-append" *ngIf="!this. channelRegistrationForm.get('audiocarrierfrequency').hasError('required') && this. channelRegistrationForm.get('audiocarrierfrequency').hasError('min')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter frequency above 45</span>
+            </div>
+            <div class="input-group-append" *ngIf="!this. channelRegistrationForm.get('audiocarrierfrequency').hasError('required') && this. channelRegistrationForm.get('audiocarrierfrequency').hasError('max')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter frequency below 230</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">CHARGE TYPE</span>
+            </div>
+            <select class="form-control" type="text" formControlName="channelchargetype" required>
+              <option value="fta">Free To Air</option>
+              <option value="paid">Paid</option>
+            </select>
+            <div class="input-group-append" *ngIf="(this. channelRegistrationForm.get('channelchargetype').dirty || this. channelRegistrationForm.get('channelchargetype').touched ) && this. channelRegistrationForm.get('channelchargetype').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Charge Type</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">TRANSMISSION TYPE</span>
+            </div>
+            <select class="form-control" type="text" formControlName="channeltransmissiontype" required>
+              <option value="sd">Standard Definition (SD)</option>
+              <option value="hd">High Definition (HD)</option>
+            </select>
+            <div class="input-group-append" *ngIf="(this. channelRegistrationForm.get('channeltransmissiontype').dirty || this. channelRegistrationForm.get('channeltransmissiontype').touched ) && this. channelRegistrationForm.get('channeltransmissiontype').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Transmission Type</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">CHARGE</span>
+            </div>
+            <div class="input-group-prepend">
+              <span style="width: 25px" class="input-group-text">&#x20b9;</span>
+            </div>
+            <input class="form-control" type="text" formControlName="channelcharge" required>
+            <div class="input-group-append" *ngIf="(this. channelRegistrationForm.get('channelcharge').dirty || this. channelRegistrationForm.get('channelcharge').touched ) && this. channelRegistrationForm.get('channelcharge').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Charge</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">CHANNEL NUMBER</span>
+            </div>
+            <input class="form-control" type="text" formControlName="channelnumber" required>
+            <div class="input-group-append" *ngIf="(this. channelRegistrationForm.get('channelnumber').dirty || this. channelRegistrationForm.get('channelnumber').touched ) && this. channelRegistrationForm.get('channelnumber').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Channel Number</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col text-right">
+          <button class="btn btn-outline-primary" type="submit" [disabled]="!this.channelRegistrationForm.valid"
+            (click)="register()">Register</button>
+        </div>
+        <div class="col text-left">
+          <button class="btn btn-outline-primary" type="submit" (click)="reset()">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

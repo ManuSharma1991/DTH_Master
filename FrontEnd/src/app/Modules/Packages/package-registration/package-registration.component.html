@@ -1,3 +1,91 @@
-<p>
-  package-registration works!
-</p>
+<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+  <h5 class="card-header text-center">Package Registration Form</h5>
+  <div class="card-body">
+    <form [formGroup]=" packageRegistrationForm" class="form-group">
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">PACKAGE NAME</span>
+            </div>
+            <input class="form-control" type="text" formControlName="packagename" required>
+            <div class="input-group-append" *ngIf="(this. packageRegistrationForm.get('packagename').dirty || this. packageRegistrationForm.get('packagename').touched ) && this. packageRegistrationForm.get('packagename').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Package Name</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">PACKAGE CATEGORY</span>
+            </div>
+            <input class="form-control" type="text" formControlName="packagecategory" required>
+            <div class="input-group-append" *ngIf="(this. packageRegistrationForm.get('packagecategory').dirty || this. packageRegistrationForm.get('packagecategory').touched ) && this. packageRegistrationForm.get('packagecategory').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Package Category</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">CHARGING TYPE</span>
+            </div>
+            <input class="form-control" type="text" formControlName="packagechargingtype" required>
+            <div class="input-group-append" *ngIf="(this. packageRegistrationForm.get('packagechargingtype').dirty || this. packageRegistrationForm.get('packagechargingtype').touched ) && this. packageRegistrationForm.get('packagechargingtype').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Charging Type</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">TRANSMISSION TYPE</span>
+            </div>
+            <input class="form-control" type="text" formControlName="packagetransmissiontype" required>
+            <div class="input-group-append" *ngIf="(this. packageRegistrationForm.get('packagetransmissiontype').dirty || this. packageRegistrationForm.get('packagetransmissiontype').touched ) && this. packageRegistrationForm.get('packagetransmissiontype').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Transmission Type</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">PACKAGE COST</span>
+            </div>
+            <input class="form-control" type="text" formControlName="packagecost" required>
+            <div class="input-group-append" *ngIf="(this. packageRegistrationForm.get('packagecost').dirty || this. packageRegistrationForm.get('packagecost').touched ) && this. packageRegistrationForm.get('packagecost').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Package Cost</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 150px" class="input-group-text">AVAILABLE DEFAULT</span>
+            </div>
+            <input class="form-control" type="text" formControlName="addedbydefault" required>
+            <div class="input-group-append" *ngIf="(this. packageRegistrationForm.get('addedbydefault').dirty || this. packageRegistrationForm.get('addedbydefault').touched ) && this. packageRegistrationForm.get('addedbydefault').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter addedbydefault</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-right">
+          <button class="btn btn-outline-primary" type="submit" [disabled]="!this.packageRegistrationForm.valid"
+            (click)="register()">Register</button>
+        </div>
+        <div class="col text-left">
+          <button class="btn btn-outline-primary" type="submit" (click)="reset()">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

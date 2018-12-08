@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-customer-management.component.css']
 })
 export class AdminCustomerManagementComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {}
+  flag = false;
+  ngOnInit() {}
+  onActivate(event: any) {
+    this.flag = true;
   }
 
+  onDeactivate(event: any) {
+    this.flag = false;
+  }
 }

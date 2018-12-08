@@ -1,3 +1,159 @@
-<p>
-  settopbox-registration works!
-</p>
+<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+  <h5 class="card-header text-center">Operator Registration Form</h5>
+  <div class="card-body">
+    <form [formGroup]=" settopboxRegistrationForm" class="form-group">
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 175px" class="input-group-text">SETTOPBOX TYPE</span>
+            </div>
+            <input class="form-control" type="text" formControlName="settopboxtype" required>
+            <div class="input-group-append" *ngIf="(this. settopboxRegistrationForm.get('settopboxtype').dirty || this. settopboxRegistrationForm.get('settopboxtype').touched ) && this. settopboxRegistrationForm.get('settopboxtype').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Settopbox Type</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 175px" class="input-group-text">SETTOPBOX FEATURES</span>
+            </div>
+            <input class="form-control" type="text" formControlName="settopboxfeatures" required>
+            <div class="input-group-append" *ngIf="(this. settopboxRegistrationForm.get('settopboxfeatures').dirty || this. settopboxRegistrationForm.get('settopboxfeatures').touched ) && this. settopboxRegistrationForm.get('settopboxfeatures').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Settopbox Features</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 175px" class="input-group-text">LENGTH</span>
+            </div>
+            <input class="form-control" type="text" formControlName="length" required>
+            <div class="input-group-append" *ngIf="(this. settopboxRegistrationForm.get('length').dirty || this. settopboxRegistrationForm.get('length').touched ) && this. settopboxRegistrationForm.get('length').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Length</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 175px" class="input-group-text">WIDTH</span>
+            </div>
+            <input class="form-control" type="text" formControlName="width" required>
+            <div class="input-group-append" *ngIf="(this. settopboxRegistrationForm.get('width').dirty || this. settopboxRegistrationForm.get('width').touched ) && this. settopboxRegistrationForm.get('width').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Width</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 175px" class="input-group-text">HEIGHT</span>
+            </div>
+            <input class="form-control" type="text" formControlName="height" required>
+            <div class="input-group-append" *ngIf="(this. settopboxRegistrationForm.get('height').dirty || this. settopboxRegistrationForm.get('height').touched ) && this. settopboxRegistrationForm.get('height').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Height</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 175px" class="input-group-text">PRICE</span>
+            </div>
+            <input class="form-control" type="text" formControlName="price" required>
+            <div class="input-group-append" *ngIf="(this. settopboxRegistrationForm.get('price').dirty || this. settopboxRegistrationForm.get('price').touched ) && this. settopboxRegistrationForm.get('price').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Price</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 175px" class="input-group-text">INSTALLATION CHARGES</span>
+            </div>
+            <input class="form-control" type="text" formControlName="installationcharges" required>
+            <div class="input-group-append" *ngIf="(this. settopboxRegistrationForm.get('installationcharges').dirty || this. settopboxRegistrationForm.get('installationcharges').touched ) && this. settopboxRegistrationForm.get('installationcharges').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Installation Charges</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 175px" class="input-group-text">UPGRADATION CHARGES</span>
+            </div>
+            <input class="form-control" type="text" formControlName="upgradationcharges" required>
+            <div class="input-group-append" *ngIf="(this. settopboxRegistrationForm.get('upgradationcharges').dirty || this. settopboxRegistrationForm.get('upgradationcharges').touched ) && this. settopboxRegistrationForm.get('upgradationcharges').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Upgradation Charges</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 175px" class="input-group-text">DISCOUNT</span>
+            </div>
+            <input class="form-control" type="text" formControlName="discount" required>
+            <div class="input-group-append" *ngIf="(this. settopboxRegistrationForm.get('discount').dirty || this. settopboxRegistrationForm.get('discount').touched ) && this. settopboxRegistrationForm.get('discount').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Discount</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 175px" class="input-group-text">BILLING TYPE</span>
+            </div>
+            <input class="form-control" type="text" formControlName="billingtype" required>
+            <div class="input-group-append" *ngIf="(this. settopboxRegistrationForm.get('billingtype').dirty || this. settopboxRegistrationForm.get('billingtype').touched ) && this. settopboxRegistrationForm.get('billingtype').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Billing Type</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 175px" class="input-group-text">REFUNDABLE DEPOSIT</span>
+            </div>
+            <input class="form-control" type="text" formControlName="refundabledepositamount" required>
+            <div class="input-group-append" *ngIf="(this. settopboxRegistrationForm.get('refundabledepositamount').dirty || this. settopboxRegistrationForm.get('refundabledepositamount').touched ) && this. settopboxRegistrationForm.get('refundabledepositamount').hasError('required')">
+              <span style="width: 225px" class="input-group-text alert-danger">Please Enter Refundable Deposit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-right">
+          <button class="btn btn-outline-primary" type="submit" [disabled]="!this.settopboxRegistrationForm.valid"
+            (click)="register()">Register</button>
+        </div>
+        <div class="col text-left">
+          <button class="btn btn-outline-primary" type="submit" (click)="reset()">Reset</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

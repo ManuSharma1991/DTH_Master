@@ -1,3 +1,120 @@
-<p>
-  video-registration works!
-</p>
+<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+  <h5 class="card-header text-center">Video Registration Form</h5>
+  <div class="card-body">
+    <form [formGroup]=" videoRegistrationForm" class="form-group">
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">VIDEO NAME</span>
+            </div>
+            <input class="form-control" type="text" formControlName="videoname" required>
+            <div class="input-group-append" *ngIf="(this. videoRegistrationForm.get('videoname').dirty || this. videoRegistrationForm.get('videoname').touched ) && this. videoRegistrationForm.get('videoname').hasError('required')">
+              <span style="width: 200px" class="input-group-text alert-danger">Please Enter videoname</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">VIDEO CATEGORY</span>
+            </div>
+            <input class="form-control" type="text" formControlName="videocategory" required>
+            <div class="input-group-append" *ngIf="(this. videoRegistrationForm.get('videocategory').dirty || this. videoRegistrationForm.get('videocategory').touched ) && this. videoRegistrationForm.get('videocategory').hasError('required')">
+              <span style="width: 200px" class="input-group-text alert-danger">Please Enter videocategory</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">VIDEO DURATION</span>
+            </div>
+            <input class="form-control" type="text" formControlName="videoduration" required>
+            <div class="input-group-append" *ngIf="(this. videoRegistrationForm.get('videoduration').dirty || this. videoRegistrationForm.get('videoduration').touched ) && this. videoRegistrationForm.get('videoduration').hasError('required')">
+              <span style="width: 200px" class="input-group-text alert-danger">Please Enter videoduration</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">VIDEO FREQUENCY</span>
+            </div>
+            <input class="form-control" type="text" formControlName="videofrequency" required>
+            <div class="input-group-append" *ngIf="(this. videoRegistrationForm.get('videofrequency').dirty || this. videoRegistrationForm.get('videofrequency').touched ) && this. videoRegistrationForm.get('videofrequency').hasError('required')">
+              <span style="width: 200px" class="input-group-text alert-danger">Please Enter videofrequency</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">VIDEO START TIME</span>
+            </div>
+            <input class="form-control" type="text" formControlName="videostarttime" required>
+            <div class="input-group-append" *ngIf="(this. videoRegistrationForm.get('videostarttime').dirty || this. videoRegistrationForm.get('videostarttime').touched ) && this. videoRegistrationForm.get('videostarttime').hasError('required')">
+              <span style="width: 200px" class="input-group-text alert-danger">Please Enter videostarttime</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">VIDEO END TIME</span>
+            </div>
+            <input class="form-control" type="text" formControlName="videoendtime" required>
+            <div class="input-group-append" *ngIf="(this. videoRegistrationForm.get('videoendtime').dirty || this. videoRegistrationForm.get('videoendtime').touched ) && this. videoRegistrationForm.get('videoendtime').hasError('required')">
+              <span style="width: 200px" class="input-group-text alert-danger">Please Enter videoendtime</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">VIDEO COST</span>
+            </div>
+            <input class="form-control" type="text" formControlName="videocost" required>
+            <div class="input-group-append" *ngIf="(this. videoRegistrationForm.get('videocost').dirty || this. videoRegistrationForm.get('videocost').touched ) && this. videoRegistrationForm.get('videocost').hasError('required')">
+              <span style="width: 200px" class="input-group-text alert-danger">Please Enter videocost</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 135px" class="input-group-text">PREVIEW</span>
+            </div>
+            <input class="form-control" type="text" formControlName="preview" required>
+            <div class="input-group-append" *ngIf="(this. videoRegistrationForm.get('preview').dirty || this. videoRegistrationForm.get('preview').touched ) && this. videoRegistrationForm.get('preview').hasError('required')">
+              <span style="width: 200px" class="input-group-text alert-danger">Please Enter preview</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col text-right">
+          <button class="btn btn-outline-primary" type="submit" [disabled]="!this.videoRegistrationForm.valid" (click)="register()">Register</button>
+        </div>
+        <div class="col text-left">
+          <button class="btn btn-outline-primary" type="submit" (click)="reset()">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

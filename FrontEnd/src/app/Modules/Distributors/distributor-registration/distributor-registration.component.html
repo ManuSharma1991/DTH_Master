@@ -1,3 +1,174 @@
-<p>
-  distributor-registration works!
-</p>
+<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+  <h5 class="card-header text-center">Operator Registration Form</h5>
+  <div class="card-body">
+    <form [formGroup]=" distributorRegistrationForm" class="form-group">
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 140px" class="input-group-text">NAME</span>
+            </div>
+            <input class="form-control" type="text" formControlName="name" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('name').dirty || this. distributorRegistrationForm.get('name').touched ) && this. distributorRegistrationForm.get('name').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter Name</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 140px" class="input-group-text">DISTRIBUTOR ID</span>
+            </div>
+            <input class="form-control" type="text" formControlName="distributorid" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('distributorid').dirty || this. distributorRegistrationForm.get('distributorid').touched ) && this. distributorRegistrationForm.get('distributorid').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter Distributor ID</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 140px" class="input-group-text">PHONE NUMBER 1</span>
+            </div>
+            <input class="form-control" type="text" formControlName="phonenumber1" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('phonenumber1').dirty || this. distributorRegistrationForm.get('phonenumber1').touched ) && this. distributorRegistrationForm.get('phonenumber1').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter Phone Number 1</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 140px" class="input-group-text">PHONE NUMBER 2</span>
+            </div>
+            <input class="form-control" type="text" formControlName="phonenumber2" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('phonenumber2').dirty || this. distributorRegistrationForm.get('phonenumber2').touched ) && this. distributorRegistrationForm.get('phonenumber2').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter Phone number 2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 140px" class="input-group-text">ADDRESS LINE 1</span>
+            </div>
+            <input class="form-control" type="text" formControlName="address1" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('address1').dirty || this. distributorRegistrationForm.get('address1').touched ) && this. distributorRegistrationForm.get('address1').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter Address Line 1</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 140px" class="input-group-text">ADDRESS LINE 2</span>
+            </div>
+            <input class="form-control" type="text" formControlName="address2" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('address2').dirty || this. distributorRegistrationForm.get('address2').touched ) && this. distributorRegistrationForm.get('address2').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter Address Line 2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 140px" class="input-group-text">CITY</span>
+            </div>
+            <input class="form-control" type="text" formControlName="city" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('city').dirty || this. distributorRegistrationForm.get('city').touched ) && this. distributorRegistrationForm.get('city').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter City</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 140px" class="input-group-text">PINCODE</span>
+            </div>
+            <input class="form-control" type="text" formControlName="pincode" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('pincode').dirty || this. distributorRegistrationForm.get('pincode').touched ) && this. distributorRegistrationForm.get('pincode').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter Pincode</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 140px" class="input-group-text">ZONE</span>
+            </div>
+            <input class="form-control" type="text" formControlName="zone" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('zone').dirty || this. distributorRegistrationForm.get('zone').touched ) && this. distributorRegistrationForm.get('zone').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter Zone</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 140px" class="input-group-text">SETTOPBOX LIMIT</span>
+            </div>
+            <input class="form-control" type="text" formControlName="settopboxlimit" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('settopboxlimit').dirty || this. distributorRegistrationForm.get('settopboxlimit').touched ) && this. distributorRegistrationForm.get('settopboxlimit').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter Settopbox Limit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================================================================ -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 140px" class="input-group-text">CREDIT LIMIT</span>
+            </div>
+            <input class="form-control" type="text" formControlName="creditlimit" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('creditlimit').dirty || this. distributorRegistrationForm.get('creditlimit').touched ) && this. distributorRegistrationForm.get('creditlimit').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter Credit Limit</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+        <div class="col">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span style="width: 200px" class="input-group-text">TOTAL COST OF INVENTORY</span>
+            </div>
+            <input class="form-control" type="text" formControlName="totalcostofinventory" required>
+            <div class="input-group-append" *ngIf="(this. distributorRegistrationForm.get('totalcostofinventory').dirty || this. distributorRegistrationForm.get('totalcostofinventory').touched ) && this. distributorRegistrationForm.get('totalcostofinventory').hasError('required')">
+              <span style="width: 230px" class="input-group-text alert-danger">Please Enter Total cost of Inventory</span>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================================ -->
+      </div>
+      <div class="row">
+        <div class="col text-right">
+          <button class="btn btn-outline-primary" type="submit" [disabled]="!this.distributorRegistrationForm.valid"
+            (click)="register()">Register</button>
+        </div>
+        <div class="col text-left">
+          <button class="btn btn-outline-primary" type="submit" (click)="reset()">Reset</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

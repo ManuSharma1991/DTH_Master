@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-settopbox-management.component.css']
 })
 export class AdminSettopboxManagementComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {}
+  flag = false;
+  ngOnInit() {}
+  onActivate(event: any) {
+    this.flag = true;
   }
 
+  onDeactivate(event: any) {
+    this.flag = false;
+  }
 }

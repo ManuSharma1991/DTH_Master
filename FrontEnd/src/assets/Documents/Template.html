@@ -1,0 +1,62 @@
+// Single Field with only required validation.
+
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span style="width: 125px" class="input-group-text">FIELD</span>
+  </div>
+  <input class="form-control" type="text" formControlName="field" required>
+  <div class="input-group-append" *ngIf="(this. formname.get('field').dirty || this. formname.get('field').touched ) && this. formname.get('field').hasError('required')">
+    <span style="width: 225px" class="input-group-text alert-danger">Please Enter field</span>
+  </div>
+</div>
+
+// Structure with two side by side fields
+
+<!-- ============================================================================================================ -->
+<div class="row">
+  <div class="col">
+
+  </div>
+  <!-- ============================================================================================================ -->
+  <div class="col">
+
+  </div>
+</div>
+
+// Structure with only one field per row
+
+<!-- ============================================================================================================ -->
+<div class="row">
+  <div class="col">
+
+  </div>
+</div>
+
+//Register and Reset Buttons
+
+<!-- ============================================================================================================ -->
+<div class="row">
+  <div class="col text-right">
+    <button class="btn btn-outline-primary" type="submit" [disabled]="!this.formname.valid" (click)="register()">Register</button>
+  </div>
+  <div class="col text-left">
+    <button class="btn btn-outline-primary" type="submit" (click)="reset()">Reset</button>
+  </div>
+</div>
+
+
+// Basic Page Structure
+
+<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+  <h5 class="card-header text-center">Operator Registration Form</h5>
+  <div class="card-body">
+    <form [formGroup]=" formname" class="form-group">
+    </form>
+  </div>
+</div>
+
+// Rupee symbol appender
+
+<div class="input-group-prepend">
+  <span style="width: 25px" class="input-group-text">&#x20b9;</span>
+</div>

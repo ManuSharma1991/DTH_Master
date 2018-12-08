@@ -91,6 +91,7 @@ export class Constants {
   }
 
   // Channel CRUD operations
+
   public static get BASE_CHANNEL_URL(): string {
     return '/channels';
   }
@@ -111,5 +112,68 @@ export class Constants {
   }
   public static get GETONE_CHANNEL_URL(): string {
     return '/getchannelbyid/';
+  }
+
+  // Settopbox crud Operations
+
+  public static get BASE_SETTOPBOX_URL(): string {
+    return '/settopboxs';
+  }
+  public static get GET_SETTOPBOX_URL(): string {
+    return '/viewallsettopboxs';
+  }
+  public static get POST_SETTOPBOX_URL(): string {
+    return '/registersettopbox';
+  }
+  public static get UPDATE_SETTOPBOX_URL(): string {
+    return '/updatesettopbox/';
+  }
+  public static get DELETE_SETTOPBOX_URL(): string {
+    return '/deletesettopbox/';
+  }
+  public static get GETONE_SETTOPBOX_URL(): string {
+    return '/getsettopboxbyid/';
+  }
+
+  // Video crud Operations
+
+  public static get BASE_VIDEO_URL(): string {
+    return '/videos';
+  }
+  public static get GET_VIDEO_URL(): string {
+    return '/viewallvideos';
+  }
+  public static get POST_VIDEO_URL(): string {
+    return '/registervideo';
+  }
+  public static get UPDATE_VIDEO_URL(): string {
+    return '/updatevideo/';
+  }
+  public static get DELETE_VIDEO_URL(): string {
+    return '/deletevideo/';
+  }
+  public static get GETONE_VIDEO_URL(): string {
+    return '/getvideobyid/';
+  }
+
+  // Package crud Operations
+
+  public static get BASE_PACKAGE_URL(): string {
+    return '/channelpackages';
+  }
+  public static get GET_PACKAGE_URL(): string {
+    return '/viewallchannelpackages';
+  }
+  public static get POST_PACKAGE_URL(): string {
+    return '/registerchannelpackage';
+  }
+  public static get UPDATE_PACKAGE_URL(): string {
+    return '/updatechannelpackage/';
+  }
+  public static get DELETE_PACKAGE_URL(): string {
+    return '/deletechannelpackage/';
+  }
+  public static get GETONE_PACKAGE_URL(): string {
+    return '/getchannelpackagebyid/';
   }
 }
