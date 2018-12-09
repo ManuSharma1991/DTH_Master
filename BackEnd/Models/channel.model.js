@@ -12,8 +12,6 @@ const ChannelSchema = mongoose.Schema( {
     channelcharge: Number,
     channelcategory: String,
     assetlocation: String,
-}, {
-    timestamps: true
 } );
 
 module.exports = mongoose.model( 'Channel', ChannelSchema );

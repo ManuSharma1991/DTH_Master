@@ -1,10 +1,10 @@
-const Distributor = require('../Models/distributor.model.js');
+const Distributor = require( '../Models/distributor.model.js' );
 
 // Create and Save a new distributor
-exports.create = (req, res) => {
+exports.create = ( req, res ) => {
 
     // Create a Distributor
-    const distributor = new Distributor({
+    const distributor = new Distributor( {
         name: req.body.name,
 
         phonenumber1: req.body.phonenumber1,
@@ -18,70 +18,66 @@ exports.create = (req, res) => {
 
         settopboxlimit: req.body.settopboxlimit,
         creditlimit: req.body.creditlimit,
-        commissionpercentageonsaleofgoods: req.body.commissionpercentageonsaleofgoods,
-        servicecharges: req.body.servicecharges,
-        totalcostofinventory: req.body.totalcostofinventory,
 
         distributorID: req.body.distributorID,
-        password: req.body.password || 'Distributor@1234'
-    });
+    } );
 
     // Save distributor in the database
     distributor.save()
-        .then(data => {
-            res.send(data);
-        }).catch(err => {
-            res.status(500).send({
+        .then( data => {
+            res.send( data );
+        } ).catch( err => {
+            res.status( 500 ).send( {
                 message: err.message || "Some error occurred while creating the Distributor."
-            });
-        });
+            } );
+        } );
 };
 
 // Retrieve and return all distributors from the database.
-exports.findAll = (req, res) => {
+exports.findAll = ( req, res ) => {
     Distributor.find()
-        .then(distributors => {
-            res.send(distributors);
-        }).catch(err => {
-            res.status(500).send({
+        .then( distributors => {
+            res.send( distributors );
+        } ).catch( err => {
+            res.status( 500 ).send( {
                 message: err.message || "Some error occurred while retrieving distributors."
-            });
-        });
+            } );
+        } );
 };
 
-// Find a single distributor with a distributorId
-exports.findOne = (req, res) => {
-    console.log('line 51 ' + req.params.distributorId)
+// Find a single distributor with a distributorid
+exports.findOne = ( req, res ) => {
+    console.log( 'line 51 ' + req.params.distributorid )
 
-    Distributor.findOne({
-            distributorID: req.params.distributorId
-        })
-        .then(distributor => {
-            if (!distributor) {
-                return res.status(404).send({
-                    message: "Distributor not found with id" + req.params.distributorId
-                });
+    Distributor.findOne( {
+            distributorID: req.params.distributorid
+        } )
+        .then( distributor => {
+            if ( !distributor ) {
+                return res.status( 404 ).send( {
+                    message: "Distributor not found with id" + req.params.distributorid
+                } );
             }
-            res.send(distributor);
-        }).catch(err => {
-            console.log(err);
-            if (err.kind === 'ObjectId') {
-                return res.status(404).send({
-                    message: "Distributor not found with id " + req.params.distributorId
-                });
+            res.send( distributor );
+        } ).catch( err => {
+            console.log( err );
+            if ( err.kind === 'ObjectId' ) {
+                return res.status( 404 ).send( {
+                    message: "Distributor not found with id " + req.params.distributorid
+                } );
             }
-            return res.status(500).send({
-                message: "Error retrieving distributor with id " + req.params.distributorId
-            });
-        });
+            return res.status( 500 ).send( {
+                message: "Error retrieving distributor with id " + req.params.distributorid
+            } );
+        } );
 };
 
-// Update a distributor identified by the distributorId in the request
-exports.update = (req, res) => {
+// Update a distributor identified by the distributorid in the request
+exports.update = ( req, res ) => {
 
     // Find distributor and update it with the request body
-    Distributor.findOneAndUpdate({
-            distributorID: req.params.distributorId
+    Distributor.findOneAndUpdate( {
+            distributorID: req.params.distributorid
         }, {
             name: req.body.name,
 
@@ -96,51 +92,50 @@ exports.update = (req, res) => {
 
             settopboxlimit: req.body.settopboxlimit,
             creditlimit: req.body.creditlimit,
-            totalcostofinventory: req.body.totalcostofinventory,
         }, {
             new: true
-        })
-        .then(distributor => {
-            if (!distributor) {
-                return res.status(404).send({
-                    message: "Distributor not found with id " + req.params.distributorId
-                });
+        } )
+        .then( distributor => {
+            if ( !distributor ) {
+                return res.status( 404 ).send( {
+                    message: "Distributor not found with id " + req.params.distributorid
+                } );
             }
-            res.send(distributor);
-        }).catch(err => {
-            if (err.kind === 'ObjectId') {
-                return res.status(404).send({
-                    message: "Distributor not found with id " + req.params.distributorId
-                });
+            res.send( distributor );
+        } ).catch( err => {
+            if ( err.kind === 'ObjectId' ) {
+                return res.status( 404 ).send( {
+                    message: "Distributor not found with id " + req.params.distributorid
+                } );
             }
-            return res.status(500).send({
-                message: "Error updating distributor with id " + req.params.distributorId
-            });
-        });
+            return res.status( 500 ).send( {
+                message: "Error updating distributor with id " + req.params.distributorid
+            } );
+        } );
 };
 
-// Delete a distributor with the specified distributorId in the request
-exports.delete = (req, res) => {
-    Distributor.findOneAndDelete({
-            distributorID: req.params.distributorId
-        })
-        .then(distributor => {
-            if (!distributor) {
-                return res.status(404).send({
-                    message: "Distributor not found with id " + req.params.distributorId
-                });
+// Delete a distributor with the specified distributorid in the request
+exports.delete = ( req, res ) => {
+    Distributor.findOneAndDelete( {
+            distributorID: req.params.distributorid
+        } )
+        .then( distributor => {
+            if ( !distributor ) {
+                return res.status( 404 ).send( {
+                    message: "Distributor not found with id " + req.params.distributorid
+                } );
             }
-            res.send({
+            res.send( {
                 message: "Distributor deleted successfully!"
-            });
-        }).catch(err => {
-            if (err.kind === 'ObjectId' || err.name === 'NotFound') {
-                return res.status(404).send({
-                    message: "Distributor not found with id " + req.params.distributorId
-                });
+            } );
+        } ).catch( err => {
+            if ( err.kind === 'ObjectId' || err.name === 'NotFound' ) {
+                return res.status( 404 ).send( {
+                    message: "Distributor not found with id " + req.params.distributorid
+                } );
             }
-            return res.status(500).send({
-                message: "Could not delete distributor with id " + req.params.distributorId
-            });
-        });
+            return res.status( 500 ).send( {
+                message: "Could not delete distributor with id " + req.params.distributorid
+            } );
+        } );
 };

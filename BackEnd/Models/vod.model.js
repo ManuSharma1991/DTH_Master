@@ -4,15 +4,14 @@ const mongoose = require( 'mongoose' );
 const VODSchema = mongoose.Schema( {
     videoname: String,
     videocategory: String,
-    videoduration: Number,
-    videofrequency: Number,
-    videostarttime: Number,
-    videoendtime: Number,
+    videoduration: String,
+    videofrequency: String,
+    videostarttime: String,
+    videoendtime: String,
     videocost: Number,
-
-    vodID: String,
-}, {
-    timestamps: true
+    vodID: Number,
+    previewlocation: String,
+    assetlocation: String
 } );
 
 module.exports = mongoose.model( 'VOD', VODSchema );

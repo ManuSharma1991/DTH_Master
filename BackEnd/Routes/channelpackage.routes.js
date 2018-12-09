@@ -11,7 +11,7 @@ module.exports = ( app ) => {
     app.get( '/channelpackages/getchannelpackagebyid/:channelpackageId', channelpackages.findOne );
 
     // Update a channelpackage with channelpackageId
-    app.put( '/channelpackages/updatechannelpackage/:channelpackageId', channelpackages.update );
+    app.put( '/channelpackages/updatechannelpackage', channelpackages.update );
 
     // Delete a channelpackage with channelpackageId
     app.delete( '/channelpackages/deletechannelpackage/:channelpackageId', channelpackages.delete );

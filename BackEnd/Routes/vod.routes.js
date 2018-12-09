@@ -1,18 +1,18 @@
-module.exports = (app) => {
-    const vods = require('../Controllers/vod.controller.js');
+module.exports = ( app ) => {
+    const vods = require( '../Controllers/vod.controller.js' );
 
     // Create a new vod
-    app.post('/vods/registervod', vods.create);
+    app.post( '/vods/registervod', vods.create );
 
     // Retrieve all vods
-    app.get('/vods/viewallvods', vods.findAll);
+    app.get( '/vods/viewallvods', vods.findAll );
 
     // Retrieve a single vod with vodId
-    app.get('/vods/getvodbyid/:vodId', vods.findOne);
+    app.get( '/vods/getvodbyid/:vodId', vods.findOne );
 
     // Update a vod with vodId
-    app.put('/vods/updatevod/:vodId', vods.update);
+    app.put( '/vods/updatevod', vods.update );
 
     // Delete a vod with vodId
-    app.delete('/vods/deletevod/:vodId', vods.delete);
+    app.delete( '/vods/deletevod/:vodId', vods.delete );
 }

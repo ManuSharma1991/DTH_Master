@@ -22,7 +22,7 @@ const retailerRoutes: Routes = [
         resolve: { Retailer: RetailerListService }
       },
       {
-        path: 'retailerdetailedview/:retailerID',
+        path: 'retailerdetailedview/:retailerid',
         component: RetailerDetailedViewComponent,
         resolve: { Retailer: RetailerOneService }
       },

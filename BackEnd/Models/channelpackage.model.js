@@ -1,20 +1,16 @@
 // @ts-nocheck
-const mongoose = require( 'mongoose' );
+const mongoose = require('mongoose');
 
-const ChannelpackageSchema = mongoose.Schema( {
-    packagename: String,
-    packagecategory: String,
-    packagechargingtype: String,
-    packagetransmissiontype: String,
-    packagecost: Number,
-    packageavailablefromdate: String,
-    packageavailabletodate: String,
-    addedbydefault: String,
+const ChannelpackageSchema = mongoose.Schema({
+  packagename: String,
+  packagecategory: String,
+  packagechargingtype: String,
+  packagetransmissiontype: String,
+  packagecost: Number,
+  packageavailablefromdate: String,
+  packageavailabletodate: String,
+  addedbydefault: String,
+  packageID: String
+});
 
-
-    channelpackageID: String,
-}, {
-    timestamps: true
-} );
-
-module.exports = mongoose.model( 'Channelpackage', ChannelpackageSchema );
+module.exports = mongoose.model('Channelpackage', ChannelpackageSchema);

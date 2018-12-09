@@ -117,43 +117,43 @@ export class Constants {
   // Settopbox crud Operations
 
   public static get BASE_SETTOPBOX_URL(): string {
-    return '/settopboxs';
+    return '/stbs';
   }
   public static get GET_SETTOPBOX_URL(): string {
-    return '/viewallsettopboxs';
+    return '/viewallstbs';
   }
   public static get POST_SETTOPBOX_URL(): string {
-    return '/registersettopbox';
+    return '/registerstb';
   }
   public static get UPDATE_SETTOPBOX_URL(): string {
-    return '/updatesettopbox/';
+    return '/updatestb/';
   }
   public static get DELETE_SETTOPBOX_URL(): string {
-    return '/deletesettopbox/';
+    return '/deletestb/';
   }
   public static get GETONE_SETTOPBOX_URL(): string {
-    return '/getsettopboxbyid/';
+    return '/getstbbyid/';
   }
 
   // Video crud Operations
 
   public static get BASE_VIDEO_URL(): string {
-    return '/videos';
+    return '/vods';
   }
   public static get GET_VIDEO_URL(): string {
-    return '/viewallvideos';
+    return '/viewallvods';
   }
   public static get POST_VIDEO_URL(): string {
-    return '/registervideo';
+    return '/registervod';
   }
   public static get UPDATE_VIDEO_URL(): string {
-    return '/updatevideo/';
+    return '/updatevod/';
   }
   public static get DELETE_VIDEO_URL(): string {
-    return '/deletevideo/';
+    return '/deletevod/';
   }
   public static get GETONE_VIDEO_URL(): string {
-    return '/getvideobyid/';
+    return '/getvodbyid/';
   }
 
   // Package crud Operations

@@ -15,13 +15,7 @@ const DistributorSchema = mongoose.Schema( {
 
     settopboxlimit: Number,
     creditlimit: Number,
-    totalcostofinventory: Number,
-
-
-    distributorID: String,
-    password: String
-}, {
-    timestamps: true
+    distributorid: Number
 } );
 
 module.exports = mongoose.model( 'Distributor', DistributorSchema );

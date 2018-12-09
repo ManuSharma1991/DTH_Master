@@ -16,11 +16,7 @@ const OperatorSchema = mongoose.Schema( {
 
     maximumnumberofcustomers: Number,
     totalnumberofactivecustomers: Number,
-
-    operatorID: String,
-    password: String
-}, {
-    timestamps: true
+    operatorid: Number
 } );
 
 module.exports = mongoose.model( 'Operator', OperatorSchema );

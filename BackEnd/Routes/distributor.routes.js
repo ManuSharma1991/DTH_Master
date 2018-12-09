@@ -1,18 +1,18 @@
-module.exports = (app) => {
-    const distributors = require('../Controllers/distributor.controller.js');
+module.exports = ( app ) => {
+    const distributors = require( '../Controllers/distributor.controller.js' );
 
     // Create a new distributor
-    app.post('/distributors/registerdistributor', distributors.create);
+    app.post( '/distributors/registerdistributor', distributors.create );
 
     // Retrieve all distributors
-    app.get('/distributors/viewalldistributors', distributors.findAll);
+    app.get( '/distributors/viewalldistributors', distributors.findAll );
 
     // Retrieve a single distributor with distributorId
-    app.get('/distributors/getdistributorbyid/:distributorId', distributors.findOne);
+    app.get( '/distributors/getdistributorbyid/:distributorId', distributors.findOne );
 
     // Update a distributor with distributorId
-    app.put('/distributors/updatedistributor/:distributorId', distributors.update);
+    app.put( '/distributors/updatedistributor', distributors.update );
 
     // Delete a distributor with distributorId
-    app.delete('/distributors/deletedistributor/:distributorId', distributors.delete);
+    app.delete( '/distributors/deletedistributor/:distributorId', distributors.delete );
 }

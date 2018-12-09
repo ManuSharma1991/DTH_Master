@@ -10,18 +10,13 @@ const CustomerSchema = mongoose.Schema( {
 
     addressline1: String,
     addressline2: String,
-    landmark: String,
     pincode: Number,
     city: String,
     state: String,
 
     operatorName: String,
     retailerName: String,
-
-    customerID: String,
-    password: String
-}, {
-    timestamps: true
+    customerid: Number
 } );
 
 module.exports = mongoose.model( 'Customer', CustomerSchema );

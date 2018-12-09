@@ -17,13 +17,7 @@ const RetailerSchema = mongoose.Schema( {
     creditlimit: Number,
     commissionpercentageonsaleofgoods: Number,
     servicecharges: Number,
-    totalcostofinventory: Number,
-
-
-    retailerID: String,
-    password: String
-}, {
-    timestamps: true
+    retailerid: Number
 } );
 
 module.exports = mongoose.model( 'Retailer', RetailerSchema );

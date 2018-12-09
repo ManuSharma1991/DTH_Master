@@ -6,7 +6,7 @@ const STBSchema = mongoose.Schema( {
     settopboxfeatures: String,
 
     length: Number,
-    breadth: Number,
+    height: Number,
     width: Number,
 
     price: Number,
@@ -17,9 +17,6 @@ const STBSchema = mongoose.Schema( {
     refundabledepositamount: Number,
 
     stbID: String
-
-}, {
-    timestamps: true
 } );
 
 module.exports = mongoose.model( 'STB', STBSchema );
